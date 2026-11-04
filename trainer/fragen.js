@@ -17,14 +17,6 @@ window.MODULE = {
   M13: "Betrieb & Wartung",
 };
 
-// Lernpfade (siehe katalog/lernpfade.md) – Presets für Üben und Prüfung
-window.PFADE = {
-  alle: { name: "Alle Module", module: null },
-  fundamentals: { name: "Fundamentals", module: ["M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10"] },
-  risk: { name: "Risk Assessment", module: ["M03", "M04", "M05", "M07", "M11"] },
-  design: { name: "Design", module: ["M04", "M05", "M06", "M09", "M10", "M12"] },
-  maintenance: { name: "Maintenance", module: ["M06", "M07", "M08", "M13"] },
-};
 
 window.FRAGEN = [
   // ---------- M01 ----------

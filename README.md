@@ -31,14 +31,14 @@ Fortschritt wird lokal im Browser (localStorage) gespeichert und lässt sich als
 
 ### Modi
 
-- **Stufen** – je Zertifikatsstufe (Fundamentals, Risk Assessment, Design, Maintenance, Expert) alle Themen aus den öffentlichen ISA-Kursbeschreibungen mit Fortschritt pro Thema:
+- **Start (Stufen-Dashboard)** – je Zertifikatsstufe (Fundamentals, Risk Assessment, Design, Maintenance, Expert) alle Themen aus den öffentlichen ISA-Kursbeschreibungen mit Fortschritt pro Thema:
   - **Meistermodus**: fragt jede offene Frage, bis sie **zweimal in Folge richtig** beantwortet ist – falsche kommen nach wenigen Fragen wieder. Endet erst bei 100 %.
   - **Stufen-Simulation**: ausgewogen über alle Themen der Stufe, Zeitlimit, Ziel ≥ 90 %.
   - **PRÜFUNGSREIF** = 100 % gemeistert + letzte zwei Simulationen ≥ 90 %.
 
-- **Lernpfade** – Presets für Fundamentals, Risk Assessment, Design, Maintenance in Üben und Prüfung.
-- **Üben** – Fragen nach Modul/Schwierigkeit filtern, sofortiges Feedback mit Erklärung und Normverweis.
-- **Prüfungssimulation** – zufällige Auswahl über alle Module, Countdown, Auswertung erst am Ende, Bestehensgrenze 70 % (anpassbar).
+- **Stufenwahl** – oben „Ich lerne für: …“ wählen (Fundamentals, Risk Assessment, Design, Maintenance, Expert). **Alle Tabs** zeigen dann nur Inhalte dieser Stufe: Dashboard, Üben nach Themen, Prüfung, Karteikasten, Statistik. Die Stufe bleibt gespeichert.
+- **Üben** – Fragen der Stufe nach Thema/Schwierigkeit filtern, sofortiges Feedback mit Erklärung und Normverweis.
+- **Prüfungssimulation** – ausgewogene Auswahl über alle Themen der Stufe, Countdown, Auswertung erst am Ende, Bestehensgrenze 70 % (anpassbar).
 - **Karteikasten** – Leitner-System mit 5 Fächern: falsch beantwortete Fragen kommen häufiger dran.
 - **Statistik** – Trefferquote pro Modul, Schwachstellen auf einen Blick.
 

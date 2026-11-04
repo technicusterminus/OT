@@ -10,17 +10,18 @@ Fundamentals ──► Risk Assessment ──► Design ──► (Maintenance) 
 > Im ISA/IEC-62443-Zertifikatsprogramm ist der *Fundamentals Specialist* Voraussetzung für die weiteren Stufen; Risk Assessment, Design und Maintenance sind danach frei kombinierbar, alle vier zusammen ergeben den *Expert*. Kursnummern, Prüfungsformat und Voraussetzungen ändern sich gelegentlich – vor der Anmeldung auf isa.org prüfen.
 
 ## So nutzt du den Trainer pro Stufe
-1. Module der Stufe lesen.
-2. Trainer → **Stufen** → **Meistermodus**, bis 100 % gemeistert.
-3. Zwei **Stufen-Simulationen** mit ≥ 90 % → Badge „PRÜFUNGSREIF“.
-4. Ein paar Tage später erneut eine Simulation – Wissen muss halten, nicht nur kurz sitzen.
+1. Im Trainer oben **„Ich lerne für: …“** die Stufe wählen – ab dann zeigen alle Tabs nur noch Inhalte dieser Stufe. Die Stufe bleibt gespeichert und lässt sich jederzeit wechseln (auch unter „Alle Stufen“).
+2. Die auf dem Start-Dashboard verlinkten Module der Stufe lesen.
+3. **Meistermodus**, bis 100 % gemeistert. Zwischendurch gezielt **Üben** nach einzelnen Themen und den **Karteikasten** nutzen.
+4. Zwei **Simulationen** mit ≥ 90 % → Badge „PRÜFUNGSREIF“.
+5. Ein paar Tage später erneut eine Simulation – Wissen muss halten, nicht nur kurz sitzen.
 
 ## Pfad 1 – Fundamentals 🟢
 **Ziel:** Begriffe, Struktur der Reihe, Rollen, SL/FR, Grundkonzepte sicher beherrschen.
 
 | Module | Trainer-Preset |
 |---|---|
-| 01 – 10 (Breite vor Tiefe) | „Fundamentals“ |
+| 01 – 10 (Breite vor Tiefe) | Stufe „Fundamentals Specialist“ |
 
 Fertig, wenn: zwei Prüfungssimulationen hintereinander ≥ 80 %.
 
