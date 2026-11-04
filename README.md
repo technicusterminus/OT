@@ -9,7 +9,8 @@ Self-paced Lernpfad und interaktiver Fragentrainer für **OT-/ICS-Security nach 
 | Bereich | Pfad | Beschreibung |
 |---|---|---|
 | Lernplan | [`katalog/00-lernplan.md`](katalog/00-lernplan.md) | 6-Wochen-Plan, Fortschritts-Checkliste, Prüfungstipps |
-| Lernmodule | [`katalog/`](katalog/) | 10 Module mit Lernzielen, Kernwissen, Merksätzen, Praxisbezug und Selbstcheck |
+| Lernpfade | [`katalog/lernpfade.md`](katalog/lernpfade.md) | Zertifikats-Roadmap Fundamentals → Risk Assessment → Design, Denkwechsel Netzwerk → OT Security |
+| Lernmodule | [`katalog/`](katalog/) | 12 Module mit Lernzielen, Kernwissen, Merksätzen, Praxisbezug und Selbstcheck |
 | Trainer | [`trainer/index.html`](trainer/index.html) | Browser-App: Übungsmodus, Prüfungssimulation mit Timer, Karteikasten (Spaced Repetition), Statistik |
 | Validierung | [`tools/validate.mjs`](tools/validate.mjs) | Prüft den Fragenpool auf Konsistenz |
 
@@ -30,6 +31,7 @@ Fortschritt wird lokal im Browser (localStorage) gespeichert und lässt sich als
 
 ### Modi
 
+- **Lernpfade** – Presets für Fundamentals, Risk Assessment, Design, Maintenance in Üben und Prüfung.
 - **Üben** – Fragen nach Modul/Schwierigkeit filtern, sofortiges Feedback mit Erklärung und Normverweis.
 - **Prüfungssimulation** – zufällige Auswahl über alle Module, Countdown, Auswertung erst am Ende, Bestehensgrenze 70 % (anpassbar).
 - **Karteikasten** – Leitner-System mit 5 Fächern: falsch beantwortete Fragen kommen häufiger dran.
@@ -49,6 +51,8 @@ Fortschritt wird lokal im Browser (localStorage) gespeichert und lässt sich als
 | 08 | Anforderungen an Dienstleister | 2-4 |
 | 09 | Sichere Produktentwicklung & Komponentenanforderungen | 4-1, 4-2 |
 | 10 | Zertifizierung, Regulatorik & Netzwerk-Praxis | ISASecure, NIS2, CRA |
+| 11 | Risk Assessment Vertiefung | 3-2 Praxis |
+| 12 | Design Vertiefung | 3-3 / 4-2 Praxis |
 
 ## Fragen beitragen
 

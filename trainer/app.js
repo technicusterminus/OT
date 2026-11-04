@@ -2,6 +2,8 @@
   "use strict";
   const FRAGEN = window.FRAGEN || [];
   const MODULE = window.MODULE || {};
+  const PFADE = window.PFADE || { alle: { name: "Alle Module", module: null } };
+  const pfadModule = (key) => (PFADE[key] && PFADE[key].module) || Object.keys(MODULE);
   const KEY = "ot62443-trainer-v1";
   const LEITNER_TAGE = [0, 1, 3, 7, 14]; // Fach 1..5
   const DAY = 86400000;
@@ -229,6 +231,13 @@
   // ---------- Üben ----------
   $("#ueben-module").innerHTML = Object.entries(MODULE).map(([m, n]) =>
     `<label class="chip" title="${esc(n)}"><input type="checkbox" value="${m}" checked>${m}</label>`).join("");
+  document.querySelectorAll(".pfad-select").forEach((sel) => {
+    sel.innerHTML = Object.entries(PFADE).map(([k, p]) => `<option value="${k}">${esc(p.name)}</option>`).join("");
+  });
+  $("#ueben-pfad").addEventListener("change", (e) => {
+    const mods = pfadModule(e.target.value);
+    document.querySelectorAll("#ueben-module input").forEach((c) => { c.checked = mods.includes(c.value); });
+  });
   $("#btn-ueben-start").addEventListener("click", () => {
     const mods = [...document.querySelectorAll("#ueben-module input:checked")].map((x) => x.value);
     const level = +$("#ueben-level").value;
@@ -242,11 +251,11 @@
 
   // ---------- Prüfung ----------
   $("#btn-pruefung-start").addEventListener("click", () => {
-    const n = Math.min(FRAGEN.length, Math.max(5, +$("#pr-anzahl").value || 50));
+    const n = Math.max(5, +$("#pr-anzahl").value || 50);
     const minuten = Math.max(1, +$("#pr-minuten").value || 75);
     const grenze = Math.min(100, Math.max(1, +$("#pr-grenze").value || 70));
     // ausgewogen: reihum aus jedem Modul ziehen
-    const proModul = Object.keys(MODULE).map((m) => mischen(FRAGEN.filter((q) => q.modul === m)));
+    const proModul = pfadModule($("#pr-pfad").value).map((m) => mischen(FRAGEN.filter((q) => q.modul === m)));
     const auswahl = [];
     while (auswahl.length < n && proModul.some((l) => l.length)) {
       proModul.forEach((l) => { if (l.length && auswahl.length < n) auswahl.push(l.pop()); });

@@ -43,6 +43,8 @@
     <section id="view-ueben" class="view">
       <div class="card" id="ueben-setup">
         <h2>Übungsmodus</h2>
+        <label for="ueben-pfad">Lernpfad</label>
+        <select id="ueben-pfad" class="pfad-select"></select>
         <label>Module</label>
         <div id="ueben-module" class="chips"></div>
         <label for="ueben-level">Schwierigkeit</label>
@@ -62,6 +64,7 @@
         <h2>Prüfungssimulation</h2>
         <p class="muted">Zufällige Fragen über alle Module, Auswertung am Ende. Das echte Prüfungsformat beim Anbieter prüfen.</p>
         <div class="form">
+          <label for="pr-pfad">Lernpfad</label><select id="pr-pfad" class="pfad-select"></select>
           <label for="pr-anzahl">Anzahl Fragen</label><input type="number" id="pr-anzahl" min="5" max="200" value="50">
           <label for="pr-minuten">Zeit (Minuten)</label><input type="number" id="pr-minuten" min="1" max="300" value="75">
           <label for="pr-grenze">Bestehensgrenze (%)</label><input type="number" id="pr-grenze" min="1" max="100" value="70">

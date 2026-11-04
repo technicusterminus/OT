@@ -2,6 +2,7 @@
 
 **Zielgruppe:** Netzwerk-/IT-Engineers, die in OT-Security einsteigen oder sich auf eine 62443-Zertifikatsprüfung vorbereiten (z. B. ISA/IEC 62443 Cybersecurity Fundamentals Specialist).
 **Aufwand:** ca. 6 Wochen à 4–6 Stunden.
+**Danach:** Vertiefung nach [Lernpfaden](lernpfade.md) – Risk Assessment (Modul 11) und Design (Modul 12).
 
 > Prüfungsformat (Fragenanzahl, Dauer, Bestehensgrenze) ändert sich gelegentlich – vor der Anmeldung immer beim Prüfungsanbieter (z. B. isa.org) nachsehen.
 
