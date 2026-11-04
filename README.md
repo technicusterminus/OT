@@ -10,7 +10,7 @@ Self-paced Lernpfad und interaktiver Fragentrainer für **OT-/ICS-Security nach 
 |---|---|---|
 | Lernplan | [`katalog/00-lernplan.md`](katalog/00-lernplan.md) | 6-Wochen-Plan, Fortschritts-Checkliste, Prüfungstipps |
 | Lernpfade | [`katalog/lernpfade.md`](katalog/lernpfade.md) | Zertifikats-Roadmap Fundamentals → Risk Assessment → Design, Denkwechsel Netzwerk → OT Security |
-| Lernmodule | [`katalog/`](katalog/) | 12 Module mit Lernzielen, Kernwissen, Merksätzen, Praxisbezug und Selbstcheck |
+| Lernmodule | [`katalog/`](katalog/) | 13 Module mit Lernzielen, Kernwissen, Merksätzen, Praxisbezug und Selbstcheck |
 | Trainer | [`trainer/index.html`](trainer/index.html) | Browser-App: Übungsmodus, Prüfungssimulation mit Timer, Karteikasten (Spaced Repetition), Statistik |
 | Validierung | [`tools/validate.mjs`](tools/validate.mjs) | Prüft den Fragenpool auf Konsistenz |
 
@@ -30,6 +30,11 @@ Oder über GitHub Pages (Settings → Pages → Branch `main`, Ordner `/`) unter
 Fortschritt wird lokal im Browser (localStorage) gespeichert und lässt sich als JSON exportieren/importieren.
 
 ### Modi
+
+- **Stufen** – je Zertifikatsstufe (Fundamentals, Risk Assessment, Design, Maintenance, Expert) alle Themen aus den öffentlichen ISA-Kursbeschreibungen mit Fortschritt pro Thema:
+  - **Meistermodus**: fragt jede offene Frage, bis sie **zweimal in Folge richtig** beantwortet ist – falsche kommen nach wenigen Fragen wieder. Endet erst bei 100 %.
+  - **Stufen-Simulation**: ausgewogen über alle Themen der Stufe, Zeitlimit, Ziel ≥ 90 %.
+  - **PRÜFUNGSREIF** = 100 % gemeistert + letzte zwei Simulationen ≥ 90 %.
 
 - **Lernpfade** – Presets für Fundamentals, Risk Assessment, Design, Maintenance in Üben und Prüfung.
 - **Üben** – Fragen nach Modul/Schwierigkeit filtern, sofortiges Feedback mit Erklärung und Normverweis.
@@ -52,7 +57,8 @@ Fortschritt wird lokal im Browser (localStorage) gespeichert und lässt sich als
 | 09 | Sichere Produktentwicklung & Komponentenanforderungen | 4-1, 4-2 |
 | 10 | Zertifizierung, Regulatorik & Netzwerk-Praxis | ISASecure, NIS2, CRA |
 | 11 | Risk Assessment Vertiefung | 3-2 Praxis |
-| 12 | Design Vertiefung | 3-3 / 4-2 Praxis |
+| 12 | Design Vertiefung | 3-3 / 4-2 Praxis, CFAT/CSAT, Firewall-Planung |
+| 13 | Betrieb & Wartung | IDS, SIEM, Incident Response, MoC, Backup, Audit |
 
 ## Fragen beitragen
 
@@ -61,5 +67,9 @@ Fragen liegen in [`trainer/fragen.js`](trainer/fragen.js). Nach Änderungen:
 ```bash
 node tools/validate.mjs
 ```
+
+Die Zuordnung Stufe → Thema → Fragen liegt in [`trainer/syllabus.js`](trainer/syllabus.js). Der Validator prüft, dass jedes Thema mindestens 3 Fragen hat und jede Frage einer Stufe zugeordnet ist.
+
+> **Ehrlicher Hinweis:** 100 % im Trainer bedeuten, dass du alle öffentlich bekannten Themen jeder Stufe beherrschst. Eine Garantie für die echte Prüfung ist das nicht – deren Fragen sind vertraulich, und Syllabus/Format können sich ändern.
 
 Bitte nur **selbst formulierte** Fragen – siehe [RECHTLICHES.md](RECHTLICHES.md).

@@ -20,6 +20,19 @@
 
 **Teilnehmer:** Asset Owner (Betrieb, Verfahrenstechnik, Safety, IT/OT-Security), Integrator, ggf. Hersteller. Ohne Betrieb und Safety ist eine Konsequenzbewertung nicht belastbar.
 
+## 1b. Greenfield vs. Brownfield & Assessment-Arten
+- **Greenfield** (Neuanlage): Risikobeurteilung vor dem Design – Security wird von Anfang an eingeplant.
+- **Brownfield** (Bestand): Ist-Aufnahme zuerst – Inventar, reale Datenflüsse, vorhandene Gegenmaßnahmen, **Gaps in Richtlinien und Verfahren** (z. B. fehlender Fernwartungsprozess, keine Backup-Tests).
+
+| Assessment-Art | Vorgehen | Risiko für den Betrieb | Einsatz |
+|---|---|---|---|
+| **High-Level** | Interviews, Dokumente, Begehung | keins | Einstieg, ZCR 2 |
+| **Passiv** | Netzwerkmitschnitt (SPAN/TAP), Konfig-Review (FW, Switch), Log-Auswertung | sehr gering | Standard in Produktion |
+| **Aktiv** | gezielte Abfragen/Scans, Credential-Checks | mittel – Geräte können ausfallen | Wartungsfenster, Testsystem, mit Freigabe |
+| **Penetrationstest** | Ausnutzen von Schwachstellen | hoch | bevorzugt auf Test-/Referenzsystem oder bei Stillstand |
+
+Ergebnis einer Ist-Aufnahme: Asset-Inventar, Datenflussdiagramm, Zonen-/Conduit-Zeichnung (Ist und Soll), Liste vorhandener Gegenmaßnahmen und Gaps, CRS.
+
 ## 2. Konsequenzen bewerten
 Bewertet wird **der Worst Case ohne Gegenmaßnahmen** (in ZCR 2) über mehrere Kategorien – die höchste zählt:
 

@@ -2,6 +2,9 @@
   "use strict";
   const FRAGEN = window.FRAGEN || [];
   const MODULE = window.MODULE || {};
+  const STUFEN = window.STUFEN || {};
+  const MEISTER_SERIE = 2; // so oft in Folge richtig = gemeistert
+  const REIF_QUOTE = 90;   // Simulations-Ziel für "prüfungsreif"
   const PFADE = window.PFADE || { alle: { name: "Alle Module", module: null } };
   const pfadModule = (key) => (PFADE[key] && PFADE[key].module) || Object.keys(MODULE);
   const KEY = "ot62443-trainer-v1";
@@ -23,9 +26,10 @@
   }
 
   function werten(id, richtig) {
-    const s = state.stats[id] || (state.stats[id] = { r: 0, f: 0, zuletzt: null });
+    const s = state.stats[id] || (state.stats[id] = { r: 0, f: 0, zuletzt: null, serie: 0 });
     richtig ? s.r++ : s.f++;
     s.zuletzt = richtig;
+    s.serie = richtig ? (s.serie || 0) + 1 : 0;
   }
   function karteiWerten(id, richtig) {
     const k = state.kartei[id] || { fach: 1, due: 0 };
@@ -54,6 +58,7 @@
     if (view === "start") renderStart();
     if (view === "kartei") renderKartei();
     if (view === "statistik") renderStatistik();
+    if (view === "stufen") renderStufen();
     window.scrollTo(0, 0);
   }
 
@@ -101,6 +106,7 @@
   function quiz(container, fragen, opts) {
     const items = fragen.map((q) => ({ q, order: mischen(q.optionen.map((_, i) => i)), antwort: [], geprueft: false }));
     let idx = 0, timerId = null, ende = null;
+    const neuItem = (q) => ({ q, order: mischen(q.optionen.map((_, i) => i)), antwort: [], geprueft: false });
     const multi = (q) => q.korrekt.length > 1;
 
     if (opts.minuten) {
@@ -142,7 +148,7 @@
         <button class="primary" data-a="abgeben">Abgeben</button>
         <span class="muted small">${items.filter((x) => x.antwort.length).length}/${items.length} beantwortet</span>`;
       container.innerHTML = `<div class="card">
-        <div class="qhead"><span>Frage ${idx + 1}/${items.length} · ${q.modul} ${esc(MODULE[q.modul] || "")} · ${"★".repeat(q.level)}</span>
+        <div class="qhead"><span>${opts.meister ? `Gemeistert ${opts.meister.fortschritt()} · ` : ""}Frage ${idx + 1}/${items.length} · ${q.modul} ${esc(MODULE[q.modul] || "")} · ${"★".repeat(q.level)}</span>
         ${ende ? `<span>⏱ <span class="timer"></span></span>` : ""}</div>
         <div class="frage">${esc(q.frage)}</div>
         ${multi(q) ? `<div class="muted small">Mehrere Antworten sind richtig.</div>` : ""}
@@ -168,6 +174,11 @@
         const ok = gleich(it.antwort, it.q.korrekt);
         werten(it.q.id, ok);
         if (opts.kartei) karteiWerten(it.q.id, ok);
+        if (opts.meister && !istGemeistert(it.q.id)) {
+          // falsch: bald wiederholen; richtig, aber noch nicht gemeistert: später erneut
+          const pos = ok ? items.length : Math.min(items.length, idx + 4);
+          items.splice(pos, 0, neuItem(it.q));
+        }
         speichern(); render();
       } else if (a === "weiter") {
         if (idx < items.length - 1) { idx++; render(); } else fertig();
@@ -185,6 +196,7 @@
 
     function fertig() {
       stop();
+      if (opts.meister) { opts.meister.fertig(); return; }
       const richtig = items.filter((x) => x.geprueft && gleich(x.antwort, x.q.korrekt)).length;
       container.innerHTML = `<div class="card"><h2>Ergebnis</h2><p><b>${richtig}/${items.length}</b> richtig (${Math.round((100 * richtig) / items.length)} %).</p>
         <div class="row"><button class="primary" data-a="neu">Neuer Durchgang</button></div></div>`;
@@ -205,7 +217,7 @@
       });
       const pct = Math.round((100 * richtig) / items.length);
       const bestanden = pct >= opts.grenze;
-      state.pruefungen.push({ datum: new Date().toISOString(), richtig, anzahl: items.length, pct, bestanden });
+      state.pruefungen.push({ datum: new Date().toISOString(), richtig, anzahl: items.length, pct, bestanden, stufe: opts.stufe || null });
       speichern();
       const zeilen = Object.entries(proModul).sort().map(([m, v]) =>
         `<tr><td>${m} ${esc(MODULE[m] || "")}</td><td>${v.r}/${v.n}</td><td>${Math.round((100 * v.r) / v.n)} %</td></tr>`).join("");
@@ -226,6 +238,88 @@
     }
 
     render();
+  }
+
+  // ---------- Stufen ----------
+  function istGemeistert(id) { const s = state.stats[id]; return !!s && (s.serie || 0) >= MEISTER_SERIE; }
+  function stufeIds(key) {
+    const st = STUFEN[key];
+    if (!st) return [];
+    if (!st.themen) return FRAGEN.map((q) => q.id);
+    return [...new Set(st.themen.flatMap((t) => t.fragen))];
+  }
+  const fragenVon = (ids) => ids.map((id) => FRAGEN.find((q) => q.id === id)).filter(Boolean);
+  function stufeStatus(key) {
+    const ids = stufeIds(key);
+    const gem = ids.filter(istGemeistert).length;
+    const sims = state.pruefungen.filter((p) => p.stufe === key);
+    const letzte2 = sims.slice(-2);
+    const simOk = letzte2.length === 2 && letzte2.every((p) => p.pct >= REIF_QUOTE);
+    const vorausOk = STUFEN[key].voraussetzung.every((v) => stufeStatus(v).reif);
+    return { ids, gem, pct: ids.length ? Math.round((100 * gem) / ids.length) : 0, sims, simOk, vorausOk,
+      reif: gem === ids.length && ids.length > 0 && simOk && (key !== "expert" || vorausOk) };
+  }
+  function simAuswahl(key, n) {
+    const st = STUFEN[key];
+    const gruppen = st.themen ? st.themen.map((t) => mischen(t.fragen)) : Object.keys(MODULE).map((m) => mischen(FRAGEN.filter((q) => q.modul === m).map((q) => q.id)));
+    const gewaehlt = new Set();
+    while (gewaehlt.size < n && gruppen.some((g) => g.length)) {
+      gruppen.forEach((g) => { while (g.length && gewaehlt.size < n) { const id = g.pop(); if (!gewaehlt.has(id)) { gewaehlt.add(id); break; } } });
+    }
+    return fragenVon([...gewaehlt]);
+  }
+  function renderStufen() {
+    $("#stufen-liste").innerHTML = Object.entries(STUFEN).map(([key, st]) => {
+      const s = stufeStatus(key);
+      const themen = (st.themen || []).map((t) => {
+        const g = t.fragen.filter(istGemeistert).length;
+        const p = Math.round((100 * g) / t.fragen.length);
+        return `<div class="thema"><span>${t.id} ${esc(t.name)}</span><span class="muted small">${g}/${t.fragen.length}</span><div class="bar"><span style="width:${p}%"></span></div></div>`;
+      }).join("");
+      const sims = s.sims.slice(-3).map((p) => `<span class="${p.pct >= REIF_QUOTE ? "pass" : "fail"}">${p.pct} %</span>`).join(" · ") || "–";
+      const voraus = st.voraussetzung.length
+        ? `<p class="small">Voraussetzung: ${st.voraussetzung.map((v) => `${esc(STUFEN[v].kurz)} ${stufeStatus(v).reif ? "✅" : "⏳"}`).join(", ")}</p>` : "";
+      const n = Math.min(50, s.ids.length);
+      return `<div class="card stufe">
+        <div class="stufe-kopf"><h3>${esc(st.name)}</h3><span class="badge ${s.reif ? "ok" : ""}">${s.reif ? "PRÜFUNGSREIF" : s.pct + " % gemeistert"}</span></div>
+        <p class="muted small">${esc(st.hinweis)}</p>${voraus}
+        <div class="bar big"><span style="width:${s.pct}%"></span></div>
+        <p class="small">Gemeistert: <b>${s.gem}/${s.ids.length}</b> Fragen · Letzte Simulationen: ${sims} · Ziel: 2× ≥ ${REIF_QUOTE} %</p>
+        ${themen ? `<details><summary>Themen (${st.themen.length})</summary><div class="themen">${themen}</div></details>` : ""}
+        <div class="row">
+          <button class="primary" data-meister="${key}" ${s.gem === s.ids.length ? "disabled" : ""}>Meistermodus (${s.ids.length - s.gem} offen)</button>
+          <button data-sim="${key}" data-n="${n}">Simulation (${n} Fragen, ${Math.round(n * 1.5)} min)</button>
+        </div></div>`;
+    }).join("");
+    document.querySelectorAll("[data-meister]").forEach((b) => b.addEventListener("click", () => meistern(b.dataset.meister)));
+    document.querySelectorAll("[data-sim]").forEach((b) => b.addEventListener("click", () => {
+      const key = b.dataset.sim, n = +b.dataset.n;
+      $("#stufen-setup").style.display = "none";
+      quiz($("#stufen-quiz"), mischen(simAuswahl(key, n)), { mode: "pruefung", minuten: Math.round(n * 1.5), grenze: REIF_QUOTE, stufe: key,
+        onAbbruch: () => { $("#stufen-setup").style.display = ""; renderStufen(); } });
+    }));
+  }
+  function meistern(key) {
+    const ids = stufeIds(key);
+    const offen = mischen(fragenVon(ids.filter((id) => !istGemeistert(id))));
+    if (!offen.length) return;
+    $("#stufen-setup").style.display = "none";
+    const zurueck = () => { $("#stufen-quiz").innerHTML = ""; $("#stufen-setup").style.display = ""; renderStufen(); };
+    quiz($("#stufen-quiz"), offen, {
+      mode: "sofort",
+      meister: {
+        fortschritt: () => `${ids.filter(istGemeistert).length}/${ids.length}`,
+        fertig: () => {
+          const g = ids.filter(istGemeistert).length;
+          $("#stufen-quiz").innerHTML = `<div class="card"><h2>${g === ids.length ? "🎯 100 % gemeistert" : "Runde beendet"}</h2>
+            <p>${esc(STUFEN[key].name)}: <b>${g}/${ids.length}</b> Fragen gemeistert.</p>
+            <p class="muted">${g === ids.length ? "Jetzt zweimal die Stufen-Simulation mit ≥ " + REIF_QUOTE + " % bestehen." : "Weiter, bis alle Fragen gemeistert sind."}</p>
+            <div class="row"><button class="primary" id="btn-meister-zurueck">Zur Stufenübersicht</button></div></div>`;
+          $("#btn-meister-zurueck").addEventListener("click", zurueck);
+        },
+      },
+      onAbbruch: zurueck,
+    });
   }
 
   // ---------- Üben ----------

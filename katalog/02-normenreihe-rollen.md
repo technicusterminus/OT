@@ -34,6 +34,11 @@ Integrator ──(Automation Solution nach 3-2/3-3, gemäß 2-4)──► Asset 
 Asset Owner ──(Betrieb nach 2-1, Wartung via Maintenance-SP nach 2-4)──► IACS im Betrieb
 ```
 
+### Profile (1-5) und Protection Scheme (2-2)
+- **Profile (62443-1-5)**: Branchen- oder anwendungsspezifische Auswahl/Anpassung von 62443-Anforderungen (z. B. für eine bestimmte Branche oder Geräteklasse), damit nicht jedes Projekt die Reihe neu interpretiert.
+- **Security Protection Scheme/Rating (62443-2-2)**: Bewertet den Schutz eines IACS **im Betrieb** – kombiniert technische Fähigkeiten (SL) und gelebte Prozesse (ML) zu einer Gesamtaussage.
+- **Konformitätsmetriken (62443-1-3)**: Ansätze, um die Erfüllung von System-Anforderungen messbar zu machen.
+
 ### Dokumenttypen
 - **IS** – International Standard, normative Anforderungen („shall“).
 - **TS** – Technical Specification, noch nicht voll konsensreif.

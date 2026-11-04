@@ -9,6 +9,12 @@ Fundamentals ──► Risk Assessment ──► Design ──► (Maintenance) 
 
 > Im ISA/IEC-62443-Zertifikatsprogramm ist der *Fundamentals Specialist* Voraussetzung für die weiteren Stufen; Risk Assessment, Design und Maintenance sind danach frei kombinierbar, alle vier zusammen ergeben den *Expert*. Kursnummern, Prüfungsformat und Voraussetzungen ändern sich gelegentlich – vor der Anmeldung auf isa.org prüfen.
 
+## So nutzt du den Trainer pro Stufe
+1. Module der Stufe lesen.
+2. Trainer → **Stufen** → **Meistermodus**, bis 100 % gemeistert.
+3. Zwei **Stufen-Simulationen** mit ≥ 90 % → Badge „PRÜFUNGSREIF“.
+4. Ein paar Tage später erneut eine Simulation – Wissen muss halten, nicht nur kurz sitzen.
+
 ## Pfad 1 – Fundamentals 🟢
 **Ziel:** Begriffe, Struktur der Reihe, Rollen, SL/FR, Grundkonzepte sicher beherrschen.
 
@@ -45,7 +51,7 @@ Praxisaufgabe: Übungsfall „Talsperre Süd“ (Lernplan) komplett bis zur CRS 
 Praxisaufgabe: Für „Talsperre Süd“ eine Conduit-Spezifikation und eine Gap-Analyse für eine reale SPS deiner Wahl erstellen.
 
 ## Pfad 4 – Maintenance (später) 🟢🟡
-Module 07, 08, 06 (FR 6/7). **Hinweis für die Strategie-Rolle:** Das Security-Programm des Betreibers (2-1) und das Dienstleister-Management (2-4) sind für eine OT-*Strategie* zentral – auch wenn das Zertifikat später kommt, Modul 07/08 früh gründlich lesen.
+Module **13 Betrieb & Wartung**, 07, 08, 06 (FR 6/7). **Hinweis für die Strategie-Rolle:** Das Security-Programm des Betreibers (2-1) und das Dienstleister-Management (2-4) sind für eine OT-*Strategie* zentral – auch wenn das Zertifikat später kommt, Modul 07/08 früh gründlich lesen.
 
 ## Vom Netzwerker zum OT Security Engineer – der Denkwechsel
 

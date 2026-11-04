@@ -11,6 +11,7 @@
     <h1>IEC 62443 Trainer</h1>
     <nav>
       <button data-view="start" class="active">Start</button>
+      <button data-view="stufen">Stufen</button>
       <button data-view="ueben">Üben</button>
       <button data-view="pruefung">Prüfung</button>
       <button data-view="kartei">Karteikasten</button>
@@ -37,6 +38,18 @@
         </div>
       </div>
       <p class="muted small">Inoffizielles Lernmaterial – kein Normtext, keine echten Prüfungsfragen. Siehe RECHTLICHES.md.</p>
+    </section>
+
+    <!-- Stufen -->
+    <section id="view-stufen" class="view">
+      <div id="stufen-setup">
+        <div class="card">
+          <h2>Zertifikatsstufen</h2>
+          <p class="muted">Pro Stufe: alle Themen aus den öffentlichen Kursbeschreibungen. <b>Prüfungsreif</b> heißt: 100 % der Fragen gemeistert (jede zweimal in Folge richtig) <b>und</b> die letzten zwei Stufen-Simulationen mit mindestens 90 %. Das garantiert kein Bestehen der echten Prüfung, deckt aber jedes Thema vollständig ab.</p>
+        </div>
+        <div id="stufen-liste"></div>
+      </div>
+      <div id="stufen-quiz"></div>
     </section>
 
     <!-- Üben -->
@@ -95,6 +108,7 @@
   </main>
 
   <script src="fragen.js"></script>
+  <script src="syllabus.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

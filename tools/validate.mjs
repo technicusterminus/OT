@@ -31,3 +31,28 @@ for (const m of Object.keys(MODULE)) if (!proModul[m]) fehler.push(`Modul ${m} h
 console.log(`${FRAGEN.length} Fragen:`, proModul);
 if (fehler.length) { console.error(fehler.join("\n")); process.exit(1); }
 console.log("OK – keine Fehler.");
+
+// ---------- Syllabus-Abdeckung ----------
+const sylSrc = readFileSync(new URL("../trainer/syllabus.js", import.meta.url), "utf8");
+vm.runInNewContext(sylSrc, ctx);
+const { STUFEN } = ctx.window;
+const MIN_PRO_THEMA = 3;
+const sfehler = [];
+const zugeordnet = new Set();
+for (const [key, st] of Object.entries(STUFEN)) {
+  for (const v of st.voraussetzung) if (!STUFEN[v]) sfehler.push(`${key}: unbekannte Voraussetzung ${v}`);
+  if (!st.themen) continue;
+  const ids = new Set();
+  for (const t of st.themen) {
+    if (t.fragen.length < MIN_PRO_THEMA) sfehler.push(`${key}/${t.id} „${t.name}“: nur ${t.fragen.length} Fragen (min. ${MIN_PRO_THEMA})`);
+    for (const id of t.fragen) {
+      if (!ids.has(id) && !FRAGEN.some((q) => q.id === id)) sfehler.push(`${key}/${t.id}: Frage ${id} existiert nicht`);
+      ids.add(id); zugeordnet.add(id);
+    }
+  }
+  console.log(`Stufe ${st.kurz}: ${st.themen.length} Themen, ${ids.size} Fragen`);
+}
+const ohne = FRAGEN.filter((q) => !zugeordnet.has(q.id)).map((q) => q.id);
+if (ohne.length) sfehler.push(`Fragen ohne Stufen-Thema: ${ohne.join(", ")}`);
+if (sfehler.length) { console.error(sfehler.join("\n")); process.exit(1); }
+console.log("Syllabus OK – jede Stufe und jedes Thema abgedeckt.");

@@ -73,6 +73,21 @@ Jede Kompensation wird **dokumentiert und in der Risikobewertung bestätigt**.
 **Monitoring**
 - OT-IDS passiv an SPAN/TAP pro Zone, Logs zentral, Zeit synchron (SR 2.11, 6.2).
 
+## 4b. Firewall-Planung & Inbetriebnahme
+1. Kommunikationsmatrix aus der Risikobeurteilung übernehmen (nur benötigte Flüsse).
+2. Regelwerk pro Conduit: **Default-Deny**, explizite Quelle/Ziel/Dienst, Richtung, Kommentar mit Begründung/Ticket.
+3. Industrieprotokolle mit DPI einschränken (Funktionscodes, Schreibzugriffe nur von EWS).
+4. Management der Firewall nur aus Management-Zone, MFA, Konfig-Backup.
+5. Logging aktivieren (abgelehnte Pakete, Admin-Zugriffe), Zeitsync.
+6. Fail-Verhalten festlegen (fail-close vs. Bypass – Verfügbarkeit abwägen).
+7. Inbetriebnahme stufenweise: zuerst **Monitor/Log-only**, Treffer auswerten, dann **Enforce** – sonst blockiert man unbekannte, aber nötige Flüsse.
+
+## 4c. Abnahmetests: CFAT & CSAT
+- **CFAT** (Cybersecurity Factory Acceptance Test): beim Integrator/Hersteller vor Auslieferung – prüft, ob das System die CRS/SR-Anforderungen erfüllt (Härtung, Konten, Firewall-Regeln, Logging, Backup/Restore, Patchstand).
+- **CSAT** (Cybersecurity Site Acceptance Test): nach Installation vor Ort – prüft die reale Integration (Anbindung an Zonen/Conduits, Fernwartungsweg, SIEM-Anbindung, Zeitsync).
+- Testplan: Testfall → zugehörige SR/Anforderung → Vorgehen → erwartetes Ergebnis → Ergebnis/Nachweis → Abweichung/Maßnahme.
+- Beispiel-Testfälle: Default-Passwörter geändert? Ungenutzte Dienste/Ports aus? Verbotener Fluss wird blockiert und geloggt? Restore aus Backup funktioniert? Schwachstellenscan ohne kritische Befunde (auf FAT-System!)?
+
 ## 5. Design-Dokumentation
 - Architekturdiagramm mit Zonen/Conduits und SL-T
 - Conduit-Spezifikationen
