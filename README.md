@@ -68,7 +68,7 @@ Fragen liegen in [`trainer/fragen.js`](trainer/fragen.js). Nach Änderungen:
 node tools/validate.mjs
 ```
 
-Die Zuordnung Stufe → Thema → Fragen liegt in [`trainer/syllabus.js`](trainer/syllabus.js). Der Validator prüft, dass jedes Thema mindestens 3 Fragen hat und jede Frage einer Stufe zugeordnet ist.
+Die Zuordnung Stufe → Thema → Fragen liegt in [`trainer/syllabus.js`](trainer/syllabus.js). Der Validator prüft, dass jedes Thema mindestens 6 Fragen hat, jede Frage mindestens eine Falschantwort enthält und jede Frage einer Stufe zugeordnet ist.
 
 > **Ehrlicher Hinweis:** 100 % im Trainer bedeuten, dass du alle öffentlich bekannten Themen jeder Stufe beherrschst. Eine Garantie für die echte Prüfung ist das nicht – deren Fragen sind vertraulich, und Syllabus/Format können sich ändern.
 

@@ -21,6 +21,7 @@ for (const q of FRAGEN) {
   if (new Set(q.optionen).size !== q.optionen.length) fehler.push(`${p} doppelte Optionen`);
   if (!Array.isArray(q.korrekt) || !q.korrekt.length) fehler.push(`${p} korrekt leer`);
   else for (const k of q.korrekt) if (!Number.isInteger(k) || k < 0 || k >= q.optionen.length) fehler.push(`${p} korrekt-Index ${k} ungültig`);
+  if (q.korrekt.length === q.optionen.length) fehler.push(`${p} alle Optionen richtig – mind. eine Falschantwort nötig`);
   if (q.korrekt.length > 1 && !/Mehrfachauswahl/.test(q.frage)) fehler.push(`${p} Mehrfachauswahl nicht gekennzeichnet`);
 }
 
@@ -36,7 +37,7 @@ console.log("OK – keine Fehler.");
 const sylSrc = readFileSync(new URL("../trainer/syllabus.js", import.meta.url), "utf8");
 vm.runInNewContext(sylSrc, ctx);
 const { STUFEN } = ctx.window;
-const MIN_PRO_THEMA = 3;
+const MIN_PRO_THEMA = 6;
 const sfehler = [];
 const zugeordnet = new Set();
 for (const [key, st] of Object.entries(STUFEN)) {
