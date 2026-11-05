@@ -60,6 +60,7 @@ Nach jeder Antwort gibt es **Feedback zu jeder gewählten und jeder übersehenen
 | 11 | Risk Assessment Vertiefung | 3-2 Praxis |
 | 12 | Design Vertiefung | 3-3 / 4-2 Praxis, CFAT/CSAT, Firewall-Planung |
 | 13 | Betrieb & Wartung | IDS, SIEM, Incident Response, MoC, Backup, Audit |
+| 15 | [Ergänzung Bahn: EN 50159](katalog/15-en50159.md) | sichere Kommunikation, Kategorien, Bedrohungen, Abwehr |
 | 14 | [Musterlösung Übungsfall](katalog/14-musterloesung-talsperre.md) | Zonen, SL-T, CRS, Conduit-Spezifikationen |
 
 ## Fragen beitragen

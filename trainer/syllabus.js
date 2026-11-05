@@ -5,7 +5,7 @@ const IDS = (prefix, von, bis) => Array.from({ length: bis - von + 1 }, (_, i) =
 
 // Prüfungspool: Diese Fragen erscheinen NUR in Simulationen (nie in Lernen/Üben).
 // So misst die Simulation Transfer auf unbekannte Fragen statt Wiedererkennen.
-window.PRUEFUNGSPOOL = ["M01-07", "M01-15", "M01-16", "M01-17", "M01-18", "M02-13", "M02-14", "M02-15", "M03-11", "M03-12", "M04-14", "M04-15", "M04-16", "M05-11", "M05-12", "M06-14", "M06-15", "M07-10", "M07-11", "M08-08", "M09-08", "M09-12", "M09-13", "M10-12", "M11-28", "M11-36", "M11-37", "M11-38", "M11-39", "M11-40", "M11-41", "M11-42", "M11-43", "M11-44", "M11-45", "M11-46", "M11-47", "M11-48", "M11-49", "M11-50", "M11-51", "M11-52", "M11-53", "M11-54", "M11-55", "M12-21", "M12-34", "M12-36", "M12-37", "M12-38", "M12-39", "M12-40", "M12-41", "M12-42", "M12-43", "M12-44", "M12-45", "M12-46", "M12-47", "M12-48", "M12-49", "M12-50", "M12-51", "M12-52", "M12-53", "M12-54", "M12-55", "M13-34", "M13-35", "M13-36", "M13-37", "M13-38", "M13-39", "M13-40", "M13-41", "M13-42", "M13-43", "M13-44", "M13-45", "M13-46", "M13-47", "M13-48", "M13-49", "M13-50", "M13-51", "M13-52", "M13-53", "M13-54"];
+window.PRUEFUNGSPOOL = ["M01-07", "M01-15", "M01-16", "M01-17", "M01-18", "M02-13", "M02-14", "M02-15", "M03-11", "M03-12", "M04-14", "M04-15", "M04-16", "M05-11", "M05-12", "M06-14", "M06-15", "M07-10", "M07-11", "M08-08", "M09-08", "M09-12", "M09-13", "M10-12", "M11-28", "M11-36", "M11-37", "M11-38", "M11-39", "M11-40", "M11-41", "M11-42", "M11-43", "M11-44", "M11-45", "M11-46", "M11-47", "M11-48", "M11-49", "M11-50", "M11-51", "M11-52", "M11-53", "M11-54", "M11-55", "M12-21", "M12-34", "M12-36", "M12-37", "M12-38", "M12-39", "M12-40", "M12-41", "M12-42", "M12-43", "M12-44", "M12-45", "M12-46", "M12-47", "M12-48", "M12-49", "M12-50", "M12-51", "M12-52", "M12-53", "M12-54", "M12-55", "M13-34", "M13-35", "M13-36", "M13-37", "M13-38", "M13-39", "M13-40", "M13-41", "M13-42", "M13-43", "M13-44", "M13-45", "M13-46", "M13-47", "M13-48", "M13-49", "M13-50", "M13-51", "M13-52", "M13-53", "M13-54", "M15-13", "M15-14"];
 
 window.STUFEN = {
   fundamentals: {
@@ -16,13 +16,13 @@ window.STUFEN = {
     themen: [
       { id: "F1", name: "OT-Grundlagen & Control-System-Security", fragen: IDS("M01", 1, 10) },
       { id: "F2", name: "Bedrohungslage, Vorfälle & Awareness", fragen: ["M01-04", ...IDS("M01", 11, 14), "M01-15", "M01-19", "M01-20"] },
-      { id: "F3", name: "Aufbau der Normenreihe & Rollen", fragen: [...IDS("M02", 1, 9), "M02-14", "M02-15"] },
+      { id: "F3", name: "Aufbau der Normenreihe & Rollen", fragen: [...IDS("M02", 1, 9), "M02-14", "M02-15", "M02-16", "M02-17", "M02-18"] },
       { id: "F4", name: "Modelle & Grundkonzepte (Zonen, Conduits, Defense in Depth)", fragen: [...IDS("M03", 1, 10), "M01-17", "M03-11", "M03-12", "M03-13", "M03-14", "M03-15"] },
       { id: "F5", name: "Security Level & Foundational Requirements", fragen: [...IDS("M04", 1, 13), "M04-14", "M04-15", "M04-16"] },
       { id: "F6", name: "IACS-Lebenszyklus & Risikobeurteilung (Überblick)", fragen: ["M03-10", ...IDS("M05", 1, 10), "M05-11", "M05-12", "M05-13", "M05-14", "M05-15"] },
       { id: "F7", name: "Systemanforderungen (3-3)", fragen: [...IDS("M06", 1, 13), "M06-14", "M06-15"] },
       { id: "F8", name: "Security-Programm des Asset Owners & Patch-Management", fragen: [...IDS("M07", 1, 9), "M07-10", "M07-11", "M07-12", "M07-13", "M07-14"] },
-      { id: "F9", name: "Anforderungen an Service Provider", fragen: [...IDS("M08", 1, 7), "M08-08", "M08-09", "M08-10"] },
+      { id: "F9", name: "Anforderungen an Service Provider", fragen: [...IDS("M08", 1, 7), "M08-08", "M08-09", "M08-10", "M08-11", "M08-12", "M08-13", "M08-14", "M08-15"] },
       { id: "F10", name: "Sichere Entwicklung & Komponentenanforderungen", fragen: [...IDS("M09", 1, 11), "M09-12", "M09-13", "M09-14", "M09-15"] },
       { id: "F11", name: "Verifikation, Profile & Protection Scheme", fragen: [...IDS("M02", 10, 13), "M10-01", "M10-02", "M10-10"] },
       { id: "F12", name: "Regulatorik & Praxis", fragen: [...IDS("M10", 3, 9), "M10-11", "M01-16", "M10-12", "M01-18", "M10-13", "M10-14", "M10-15"] },
@@ -57,7 +57,7 @@ window.STUFEN = {
       { id: "D3", name: "Segmentierung & Zonengrenzen", fragen: ["M05-10", "M06-01", "M06-06", "M06-07", "M12-08", "M12-23", "M12-37", "M12-50"] },
       { id: "D4", name: "DMZ-Architekturen & IT/OT-Übergang", fragen: ["M01-10", "M10-05", "M10-06", "M12-09", "M12-24", "M12-25", "M12-38", "M12-39", "M12-52"] },
       { id: "D5", name: "Firewall-Planung, -Konfiguration & Inbetriebnahme", fragen: ["M06-03", "M10-07", "M12-16", "M12-17", "M12-18", "M12-26", "M12-42"] },
-      { id: "D6", name: "Fernzugriff, Wireless & SIS", fragen: ["M06-02", "M08-05", "M12-05", "M12-06", "M12-11", "M12-27", "M12-40", "M12-44", "M12-46", "M12-53", "M12-55"] },
+      { id: "D6", name: "Fernzugriff, Wireless & SIS", fragen: ["M06-02", "M08-05", "M12-05", "M12-06", "M12-11", "M12-27", "M12-40", "M12-44", "M12-46", "M12-53", "M12-55", "M08-14"] },
       { id: "D7", name: "Conduit-Spezifikation & Design-Dokumentation", fragen: ["M06-09", "M12-04", "M12-07", "M12-28", "M12-29", "M12-30", "M12-45"] },
       { id: "D8", name: "Abnahmetests CFAT/CSAT", fragen: ["M12-13", "M12-14", "M12-15", "M12-31", "M12-32", "M12-33", "M12-43", "M12-47", "M12-49"] },
       { id: "D9", name: "Komponenten & SL-C (4-2)", fragen: ["M02-08", ...IDS("M09", 4, 8), "M12-51", "M09-14", "M09-15"] },
@@ -75,10 +75,20 @@ window.STUFEN = {
       { id: "W3", name: "Incident-Response-Plan", fragen: ["M13-06", "M13-07", "M13-08", "M13-20", "M13-25", "M13-26", "M13-38", "M13-43", "M13-49"] },
       { id: "W4", name: "Management of Change", fragen: ["M11-06", "M13-09", "M13-10", "M13-27", "M13-28", "M13-29", "M13-42", "M13-46", "M13-50"] },
       { id: "W5", name: "Backup & Restore", fragen: ["M04-10", "M06-04", "M08-06", "M13-11", "M13-12", "M13-13", "M13-37", "M13-48"] },
-      { id: "W6", name: "Patch- & Schwachstellenmanagement, Malware-Schutz", fragen: ["M07-04", "M07-05", "M07-07", "M07-09", "M13-14", "M13-15", "M13-39", "M13-53"] },
+      { id: "W6", name: "Patch- & Schwachstellenmanagement, Malware-Schutz", fragen: ["M07-04", "M07-05", "M07-07", "M07-09", "M13-14", "M13-15", "M13-39", "M13-53", "M08-12"] },
       { id: "W7", name: "Konten & Zugriffe im Betrieb", fragen: ["M06-13", "M08-05", "M13-16", "M13-30", "M13-31", "M13-32", "M13-40", "M13-45", "M13-54"] },
       { id: "W8", name: "Security-Audit & kontinuierliche Verbesserung", fragen: ["M07-02", "M07-03", "M13-17", "M13-18", "M13-19", "M13-33", "M13-41", "M13-44", "M13-51"] },
-      { id: "W9", name: "Dienstleister im Betrieb (2-4)", fragen: ["M08-01", "M08-02", "M08-03", "M08-04", "M08-06", "M13-34", "M08-09", "M08-10"] },
+      { id: "W9", name: "Dienstleister im Betrieb (2-4)", fragen: ["M08-01", "M08-02", "M08-03", "M08-04", "M08-06", "M13-34", "M08-09", "M08-10", "M08-11", "M08-13", "M08-15"] },
+    ],
+  },
+  bahn: {
+    name: "Ergänzung Bahn: EN 50159",
+    kurz: "Bahn EN 50159",
+    hinweis: "Sichere Kommunikation in Bahnsystemen. Kein eigenes Personenzertifikat – ergänzt 62443 für den Bahnbereich (zusammen mit CLC/TS 50701 und IEC 63452).",
+    voraussetzung: ["fundamentals"],
+    themen: [
+      { id: "B1", name: "Einordnung, Black Channel & Kategorien", fragen: ["M15-01", "M15-02", "M15-03", "M15-04", "M15-09", "M15-11", "M15-13"] },
+      { id: "B2", name: "Bedrohungen & Abwehrmaßnahmen", fragen: ["M15-05", "M15-06", "M15-07", "M15-08", "M15-10", "M15-12", "M15-14"] },
     ],
   },
   expert: {

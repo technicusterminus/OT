@@ -17,7 +17,7 @@
     M04: "04-security-level-fr.md", M05: "05-risikobeurteilung-3-2.md", M06: "06-systemanforderungen-3-3.md",
     M07: "07-betreiber-2-1-2-3.md", M08: "08-dienstleister-2-4.md", M09: "09-produkt-4-1-4-2.md",
     M10: "10-zertifizierung-praxis.md", M11: "11-risk-assessment-vertiefung.md", M12: "12-design-vertiefung.md",
-    M13: "13-betrieb-wartung.md",
+    M13: "13-betrieb-wartung.md", M15: "15-en50159.md",
   };
 
   // ---------- Speicher ----------

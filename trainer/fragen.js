@@ -19,6 +19,7 @@ window.MODULE = {
   M11: "Risk Assessment Vertiefung",
   M12: "Design Vertiefung",
   M13: "Betrieb & Wartung",
+  M15: "Ergänzung Bahn: EN 50159",
 };
 
 window.FRAGEN = [];
