@@ -3,7 +3,7 @@
 Empfohlene Reihenfolge für das Profil **Network Engineer → OT Security Engineer → Lead OT-Strategie**:
 
 ```
-Fundamentals ──► Risk Assessment ──► Design ──► (Maintenance) ──► Expert
+Foundation ──► Risk Assessment ──► Design ──► Maintenance ──► Expert
    Pflicht          Kernkompetenz       Sweet Spot     später          Ziel
 ```
 
@@ -16,7 +16,7 @@ Fundamentals ──► Risk Assessment ──► Design ──► (Maintenance) 
 4. Zwei **Simulationen** mit ≥ 90 % → Badge „PRÜFUNGSREIF“.
 5. Ein paar Tage später erneut eine Simulation – Wissen muss halten, nicht nur kurz sitzen.
 
-## Pfad 1 – Fundamentals 🟢
+## Stufe 1 – Foundation (Cybersecurity Fundamentals Specialist) 🟢
 **Ziel:** Begriffe, Struktur der Reihe, Rollen, SL/FR, Grundkonzepte sicher beherrschen.
 
 | Module | Trainer-Preset |
@@ -25,7 +25,7 @@ Fundamentals ──► Risk Assessment ──► Design ──► (Maintenance) 
 
 Fertig, wenn: zwei Prüfungssimulationen hintereinander ≥ 80 %.
 
-## Pfad 2 – Risk Assessment 🟡
+## Stufe 2 – Cybersecurity Risk Assessment Specialist 🟡
 **Ziel:** Eine 3-2-Risikobeurteilung selbst moderieren und eine CRS schreiben können.
 
 | Module | Schwerpunkt |
@@ -38,7 +38,7 @@ Fertig, wenn: zwei Prüfungssimulationen hintereinander ≥ 80 %.
 
 Praxisaufgabe: Übungsfall „Talsperre Süd“ (Lernplan) komplett bis zur CRS durcharbeiten.
 
-## Pfad 3 – Design 🟡🟠
+## Stufe 3 – Cybersecurity Design Specialist 🟡🟠
 **Ziel:** Aus Zonen/Conduits und SL-T eine prüfbare Architektur mit abgeleiteten Systemanforderungen machen.
 
 | Module | Schwerpunkt |
@@ -51,7 +51,7 @@ Praxisaufgabe: Übungsfall „Talsperre Süd“ (Lernplan) komplett bis zur CRS 
 
 Praxisaufgabe: Für „Talsperre Süd“ eine Conduit-Spezifikation und eine Gap-Analyse für eine reale SPS deiner Wahl erstellen.
 
-## Pfad 4 – Maintenance (später) 🟢🟡
+## Stufe 4 – Cybersecurity Maintenance Specialist 🟢🟡
 Module **13 Betrieb & Wartung**, 07, 08, 06 (FR 6/7). **Hinweis für die Strategie-Rolle:** Das Security-Programm des Betreibers (2-1) und das Dienstleister-Management (2-4) sind für eine OT-*Strategie* zentral – auch wenn das Zertifikat später kommt, Modul 07/08 früh gründlich lesen.
 
 ## Vom Netzwerker zum OT Security Engineer – der Denkwechsel

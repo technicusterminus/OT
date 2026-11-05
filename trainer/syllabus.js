@@ -9,9 +9,9 @@ window.PRUEFUNGSPOOL = ["M01-07", "M01-15", "M01-16", "M01-17", "M01-18", "M02-1
 
 window.STUFEN = {
   fundamentals: {
-    name: "Fundamentals Specialist",
-    kurz: "Fundamentals",
-    hinweis: "Pflicht-Einstieg. Breites Wissen über die gesamte Reihe.",
+    name: "1 · Foundation – Cybersecurity Fundamentals Specialist",
+    kurz: "Foundation",
+    hinweis: "Stufe 1 und Pflicht-Einstieg (Kurs IC32). Breites Wissen über die gesamte Normenreihe.",
     voraussetzung: [],
     themen: [
       { id: "F1", name: "OT-Grundlagen & Control-System-Security", fragen: [...IDS("M01", 1, 10), "M01-21"] },
@@ -29,9 +29,9 @@ window.STUFEN = {
     ],
   },
   risk: {
-    name: "Risk Assessment Specialist",
+    name: "2 · Cybersecurity Risk Assessment Specialist",
     kurz: "Risk Assessment",
-    hinweis: "Assess-Phase: Ist-Aufnahme, Zonen/Conduits, SL-T, CRS – Greenfield und Brownfield.",
+    hinweis: "Stufe 2 (Kurs IC33). Voraussetzung: Foundation. Assess-Phase: Ist-Aufnahme, Zonen/Conduits, SL-T, CRS.",
     voraussetzung: ["fundamentals"],
     themen: [
       { id: "R1", name: "System under Consideration & Vorbereitung", fragen: ["M05-01", "M11-01", "M11-09", "M11-16", "M11-19", "M11-20", "M11-36", "M11-55", "M11-60", "M11-62"] },
@@ -47,9 +47,9 @@ window.STUFEN = {
     ],
   },
   design: {
-    name: "Design Specialist",
+    name: "3 · Cybersecurity Design Specialist",
     kurz: "Design",
-    hinweis: "Gegenmaßnahmen auswählen und umsetzen: Segmentierung, DMZ, Firewalls, Abnahmetests.",
+    hinweis: "Stufe 3 (Kurs IC34). Voraussetzung: Foundation. Gegenmaßnahmen auswählen und umsetzen: Segmentierung, DMZ, Firewalls, Abnahmetests.",
     voraussetzung: ["fundamentals"],
     themen: [
       { id: "D1", name: "Vom SL-T zu Systemanforderungen", fragen: ["M04-09", "M06-11", "M12-01", "M12-19", "M12-20", "M12-21", "M12-56", "M12-57", "M04-17", "M06-17"] },
@@ -65,9 +65,9 @@ window.STUFEN = {
     ],
   },
   maintenance: {
-    name: "Maintenance Specialist",
+    name: "4 · Cybersecurity Maintenance Specialist",
     kurz: "Maintenance",
-    hinweis: "Betrieb: Erkennung, Monitoring, Incident Response, MoC, Backup, Audit.",
+    hinweis: "Stufe 4 (Kurs IC37). Voraussetzung: Foundation. Betrieb: Erkennung, Monitoring, Incident Response, MoC, Backup, Audit.",
     voraussetzung: ["fundamentals"],
     themen: [
       { id: "W1", name: "Netz- und hostbasierte Angriffserkennung", fragen: ["M06-10", "M10-11", "M13-01", "M13-02", "M13-03", "M13-21", "M13-35", "M13-52"] },
@@ -81,21 +81,21 @@ window.STUFEN = {
       { id: "W9", name: "Dienstleister im Betrieb (2-4)", fragen: ["M08-01", "M08-02", "M08-03", "M08-04", "M08-06", "M13-34", "M08-09", "M08-10", "M08-11", "M08-13", "M08-15"] },
     ],
   },
+  expert: {
+    name: "5 · ISA/IEC 62443 Cybersecurity Expert",
+    kurz: "Expert",
+    hinweis: "Keine eigene Prüfung: wird mit allen vier Specialist-Zertifikaten (1–4) verliehen. Hier: Gesamtsimulation über alle Stufen.",
+    voraussetzung: ["fundamentals", "risk", "design", "maintenance"],
+    themen: null, // = Vereinigung aller Stufen + alle Fragen
+  },
   bahn: {
-    name: "Ergänzung Bahn: EN 50159",
+    name: "Ergänzung · Bahn: EN 50159 (kein ISA-Zertifikat)",
     kurz: "Bahn EN 50159",
-    hinweis: "Sichere Kommunikation in Bahnsystemen. Kein eigenes Personenzertifikat – ergänzt 62443 für den Bahnbereich (zusammen mit CLC/TS 50701 und IEC 63452).",
+    hinweis: "Kein Bestandteil des ISA-Programms. Sichere Kommunikation in Bahnsystemen, ergänzt 62443 zusammen mit CLC/TS 50701 und IEC 63452.",
     voraussetzung: ["fundamentals"],
     themen: [
       { id: "B1", name: "Einordnung, Black Channel & Kategorien", fragen: ["M15-01", "M15-02", "M15-03", "M15-04", "M15-09", "M15-11", "M15-13", "M15-16", "M15-18", "M15-19", "M15-20"] },
       { id: "B2", name: "Bedrohungen & Abwehrmaßnahmen", fragen: ["M15-05", "M15-06", "M15-07", "M15-08", "M15-10", "M15-12", "M15-14", "M15-15", "M15-17"] },
     ],
-  },
-  expert: {
-    name: "Expert",
-    kurz: "Expert",
-    hinweis: "Keine eigene Prüfung: wird mit allen vier Specialist-Zertifikaten erreicht. Hier: Gesamtsimulation über alle Stufen.",
-    voraussetzung: ["fundamentals", "risk", "design", "maintenance"],
-    themen: null, // = Vereinigung aller Stufen + alle Fragen
   },
 };

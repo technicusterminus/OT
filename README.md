@@ -31,7 +31,7 @@ Fortschritt wird lokal im Browser (localStorage) gespeichert und lässt sich als
 
 ### Modi
 
-Oben **„Ich lerne für: …“** wählen (Fundamentals, Risk Assessment, Design, Maintenance, Expert) – alle Tabs zeigen dann nur Inhalte dieser Stufe.
+Oben **„Ich lerne für: …“** wählen: 1 Foundation (Fundamentals Specialist), 2 Risk Assessment, 3 Design, 4 Maintenance, 5 Expert, plus Ergänzung Bahn EN 50159 – alle Tabs zeigen dann nur Inhalte dieser Stufe.
 
 - **Start (Stufen-Dashboard)** – Fortschritt je Thema, Lernkartei, verlinktes Lernmaterial.
   - **Täglich lernen**: fällige Wiederholungen plus begrenzt neue Fragen. Falsche Antworten kommen in derselben Runde wieder. **Gemeistert** ist eine Frage erst, wenn sie an **zwei verschiedenen Tagen** richtig beantwortet wurde.
