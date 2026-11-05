@@ -187,7 +187,7 @@ F("M13-27", 2, "Welche Änderungen müssen über Management of Change laufen? (M
   R("Neue Firewall-Regel", "Ändert einen Conduit."),
   R("Firmware-Update einer SPS", "Ändert eine Komponente."),
   R("Neues Dienstleisterkonto", "Ändert Zugriffe."),
-  X("Austausch des Druckerpapiers", "Keine Änderung am IACS."),
+  X("Ein neuer Schichtplan für die Leitwarte", "Organisatorisch, aber keine Änderung an Systemen, Software oder Zugriffen."),
 ], "Konfiguration, Software und Zugriffe sind MoC-pflichtig.", "Modul 13, MoC");
 
 F("M13-28", 2, "Was gehört nach Abschluss einer Änderung zum MoC?", [

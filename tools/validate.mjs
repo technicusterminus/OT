@@ -40,7 +40,7 @@ const single = FRAGEN.filter((q) => q.korrekt.length === 1);
 const laengste = single.filter((q) => { const L = q.optionen.map((o) => o.length); const m = Math.max(...L); return L[q.korrekt[0]] === m && L.filter((x) => x === m).length === 1; }).length;
 const anteilLang = Math.round((100 * laengste) / single.length);
 if (anteilLang > 40) fehler.push(`Längen-Hinweis: richtige Antwort ist in ${anteilLang} % der Single-Choice-Fragen die längste (max. 40 %)`);
-const scherz = /Kantine|Kaffee|Lieblingsfarbe|Bürostuhl|Glaser|Kabelfarbe|Druckerstau|Meteorit|Bildschirmschoner|Gehaltsstufe|weiß oder grau/i;
+const scherz = /Kantine|Kaffee|Farbe d|Druckerpapier|Lüfter|Lieblingsfarbe|Bürostuhl|Glaser|Kabelfarbe|Druckerstau|Meteorit|Bildschirmschoner|Gehaltsstufe|weiß oder grau/i;
 FRAGEN.forEach((q) => q.optionen.forEach((o, i) => { if (!q.korrekt.includes(i) && scherz.test(o)) fehler.push(`[${q.id}] offensichtlicher Scherz-Distraktor: „${o}“`); }));
 const abs = /\b(immer|nie|niemals|ausschließlich|verboten|gar nicht|grundsätzlich)\b/i;
 let dA = 0, dN = 0, rA = 0, rN = 0;
