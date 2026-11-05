@@ -18,7 +18,6 @@
       <button data-view="start" class="active">Start</button>
       <button data-view="ueben">Üben</button>
       <button data-view="pruefung">Prüfung</button>
-      <button data-view="kartei">Karteikasten</button>
       <button data-view="statistik">Statistik</button>
       <button data-view="stufen">Alle Stufen</button>
     </nav>
@@ -47,7 +46,7 @@
     <section id="view-stufen" class="view">
       <div class="card">
         <h2>Alle Stufen</h2>
-        <p class="muted">Wähle die Stufe, auf die du dich gerade vorbereitest. Alle Tabs (Start, Üben, Prüfung, Karteikasten, Statistik) zeigen dann nur Inhalte dieser Stufe. <b>Prüfungsreif</b> = 100 % der Fragen gemeistert (je zweimal in Folge richtig) und die letzten zwei Simulationen ≥ 90 %.</p>
+        <p class="muted">Wähle die Stufe, auf die du dich gerade vorbereitest. Alle Tabs (Start, Üben, Prüfung, Statistik) zeigen dann nur Inhalte dieser Stufe. <b>Prüfungsreif</b> = alle Lernfragen an zwei verschiedenen Tagen richtig und die letzten zwei Simulationen (an verschiedenen Tagen) ≥ 90 % gesamt und ≥ 80 % im Prüfungspool.</p>
       </div>
       <div id="stufen-liste"></div>
     </section>
@@ -56,6 +55,7 @@
     <section id="view-ueben" class="view">
       <div class="card" id="ueben-setup">
         <h2>Üben – <span class="stufe-name"></span></h2>
+        <p class="muted small">Freies Üben nach Themen. Für dauerhaftes Behalten nutze „Täglich lernen“ auf der Startseite.</p>
         <label>Themen</label>
         <div id="ueben-themen" class="chips"></div>
         <label for="ueben-level">Schwierigkeit</label>
@@ -85,16 +85,6 @@
       <div id="pruefung-quiz"></div>
     </section>
 
-    <!-- Karteikasten -->
-    <section id="view-kartei" class="view">
-      <div class="card" id="kartei-setup">
-        <h2>Karteikasten – <span class="stufe-name"></span></h2>
-        <p class="muted">Richtig → ein Fach weiter, falsch → zurück in Fach 1. Fällige Fragen werden gezeigt.</p>
-        <div id="kartei-faecher" class="faecher"></div>
-        <div class="row"><button id="btn-kartei-start" class="primary">Fällige lernen</button></div>
-      </div>
-      <div id="kartei-quiz"></div>
-    </section>
 
     <!-- Statistik -->
     <section id="view-statistik" class="view">
@@ -106,6 +96,23 @@
   </main>
 
   <script src="fragen.js"></script>
+  <script src="fragen/M01.js"></script>
+  <script src="fragen/M02.js"></script>
+  <script src="fragen/M03.js"></script>
+  <script src="fragen/M04.js"></script>
+  <script src="fragen/M05.js"></script>
+  <script src="fragen/M06.js"></script>
+  <script src="fragen/M07.js"></script>
+  <script src="fragen/M08.js"></script>
+  <script src="fragen/M09.js"></script>
+  <script src="fragen/M10.js"></script>
+  <script src="fragen/M11.js"></script>
+  <script src="fragen/M12.js"></script>
+  <script src="fragen/M13.js"></script>
+  <script src="fragen/S1-fundamentals.js"></script>
+  <script src="fragen/S2-risk.js"></script>
+  <script src="fragen/S3-design.js"></script>
+  <script src="fragen/S4-maintenance.js"></script>
   <script src="syllabus.js"></script>
   <script src="app.js"></script>
 </body>

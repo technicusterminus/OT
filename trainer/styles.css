@@ -85,3 +85,11 @@ details summary { cursor: pointer; margin-top: 6px; }
 .stufe-wahl { margin: 0; font-weight: 600; font-size: .9rem; display: flex; align-items: center; gap: 6px; }
 .stufe-wahl select { max-width: 100%; }
 .card.stufe.aktiv { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.fb-liste { list-style: none; padding: 0; margin: 8px 0 4px; display: grid; gap: 6px; }
+.fb-liste li { padding: 6px 8px; border-radius: 6px; background: var(--card); border-left: 3px solid var(--border); font-size: .92rem; }
+.fb-liste li.fb-ok { border-left-color: var(--ok); }
+.fb-liste li.fb-bad { border-left-color: var(--bad); }
+.fb-liste li.fb-fehlt { border-left-color: var(--accent); }
+.badge.klein { font-size: .7rem; padding: 1px 6px; vertical-align: middle; }
+.faecher { grid-template-columns: repeat(6, 1fr); }
+@media (max-width: 520px) { .faecher { grid-template-columns: repeat(3, 1fr); } }
