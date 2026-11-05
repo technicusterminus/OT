@@ -2,6 +2,7 @@
 
 **Zielgruppe:** Netzwerk-/IT-Engineers, die in OT-Security einsteigen oder sich auf eine 62443-Zertifikatsprüfung vorbereiten (z. B. ISA/IEC 62443 Cybersecurity Fundamentals Specialist).
 **Aufwand:** ca. 6 Wochen à 4–6 Stunden.
+**Danach:** Vertiefung nach [Lernpfaden](lernpfade.md) – Risk Assessment (Modul 11) und Design (Modul 12).
 
 > Prüfungsformat (Fragenanzahl, Dauer, Bestehensgrenze) ändert sich gelegentlich – vor der Anmeldung immer beim Prüfungsanbieter (z. B. isa.org) nachsehen.
 
@@ -22,7 +23,7 @@
 2. **Merksätze** laut erklären können (Feynman-Methode).
 3. **Selbstcheck** am Modulende ohne Nachschlagen beantworten.
 4. **Trainer – Üben** nur für dieses Modul, bis ≥ 80 %.
-5. **Karteikasten** täglich: alte Fragen kommen nach dem Leitner-Prinzip wieder.
+5. **Täglich lernen** im Trainer: fällige Fragen kommen mit wachsendem Abstand wieder (1, 3, 7, 14, 30 Tage).
 6. Sobald alle Module ≥ 80 %: **Prüfungssimulation**. Ziel: zweimal hintereinander ≥ 80 %.
 
 ## Übungsfall (durchgängig für Module 3–6)
@@ -35,6 +36,8 @@ Aufgaben:
 - [ ] Lege für jede Zone ein SL-T fest und begründe es mit dem Angreiferprofil.
 - [ ] Wähle für den Conduit Leitstelle↔Außenstationen konkrete Maßnahmen (Bezug zu FR 1, 4, 5).
 - [ ] Welche Anforderungen stellst du in der Ausschreibung an den Integrator (2-4) und an die SPS (4-2)?
+
+➡️ Danach vergleichen: [Musterlösung](14-musterloesung-talsperre.md)
 
 ## Prüfungstipps
 

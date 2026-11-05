@@ -55,6 +55,17 @@ Grundregel: **Keine direkte Kommunikation von Level 4 nach Level 2 oder tiefer**
 | OPC UA | 4840/tcp | sicher **nur** bei Security Mode Sign/SignAndEncrypt | Mode „None“ verbieten, Zertifikatsmanagement |
 | S7comm | 102/tcp | ältere Varianten ohne Auth | S7comm-plus/aktuelle Firmware, Zugriffsschutz |
 
+### Bedrohungslage & bekannte Vorfälle (öffentlich dokumentiert)
+| Jahr | Vorfall | Lehre |
+|---|---|---|
+| 2010 | **Stuxnet** – Manipulation von SPS-Logik in einer Urananreicherung, Verbreitung u. a. per USB | Air-Gap ist kein Schutz; Integrität der Steuerungslogik überwachen |
+| 2015/2016 | **Angriffe auf das ukrainische Stromnetz** (u. a. Industroyer 2016) | Fernzugriff und IT→OT-Pfade sind Haupteinfallstor; OT-Protokolle direkt missbraucht |
+| 2017 | **TRITON/TRISIS** – Angriff auf ein Safety-System in einer Petrochemieanlage | SIS sind Angriffsziel; Schlüsselschalter/Write-Protect und eigene Zone |
+| 2017 | **NotPetya** – Wiper über IT, massive Produktionsausfälle weltweit | Fehlende IT/OT-Trennung führt zu Kollateralschäden |
+| 2021 | **Colonial Pipeline** – Ransomware in der IT, OT vorsorglich abgeschaltet | Auch ohne OT-Kompromittierung: Abhängigkeiten IT↔OT bewerten |
+
+**Awareness als Gegenmaßnahme:** Viele Angriffe beginnen beim Menschen (Phishing, USB-Sticks, unsichere Fernwartung). Schulung von Operatoren, Instandhaltung und Dienstleistern ist eine eigenständige, wirksame Schutzmaßnahme.
+
 ## Merksätze
 - 🧠 In der OT ist **Verfügbarkeit** König – Security darf die Anlage nicht abschalten.
 - 🧠 IACS = Menschen + Prozesse + Technik.
@@ -67,5 +78,20 @@ Grundregel: **Keine direkte Kommunikation von Level 4 nach Level 2 oder tiefer**
 
 ## Selbstcheck
 - [ ] Warum ist ein aktiver Portscan in der OT riskant?
+  <details><summary>Lösung</summary>
+
+  Viele Embedded-Geräte haben schwache IP-Stacks und reagieren auf unerwartete Pakete mit Absturz, Neustart oder Fehlzustand – im laufenden Prozess heißt das Produktionsausfall oder sogar Safety-Risiko. Deshalb passiv (SPAN/TAP) erfassen und aktive Scans nur mit Freigabe im Wartungsfenster bzw. am Testsystem.
+
+  </details>
 - [ ] Ordne Historian, Jump-Host, HMI, SPS, ERP ins Purdue-Modell ein.
+  <details><summary>Lösung</summary>
+
+  SPS → Level 1 · HMI → Level 2 · Historian → Level 3 (Spiegel ggf. in der DMZ 3.5) · Jump-Host → DMZ (Level 3.5) · ERP → Level 4.
+
+  </details>
 - [ ] Welches Schutzziel hat in der OT typischerweise oberste Priorität – und warum?
+  <details><summary>Lösung</summary>
+
+  Verfügbarkeit (zusammen mit Safety/HSE): Ein Ausfall oder eine Störung des Prozesses kann Menschen, Umwelt und Anlage gefährden und verursacht hohe Kosten. Integrität folgt dicht dahinter, Vertraulichkeit ist meist nachrangig.
+
+  </details>

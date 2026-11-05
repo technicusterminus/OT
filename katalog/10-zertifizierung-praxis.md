@@ -50,5 +50,20 @@ Regeln:
 
 ## Selbstcheck
 - [ ] Welches ISASecure-Programm prüft einen Managed Switch?
+  <details><summary>Lösung</summary>
+
+  CSA – Component Security Assurance (4-1 + 4-2).
+
+  </details>
 - [ ] Warum sollte die IT Daten aus der DMZ abholen, statt direkt auf den OT-Historian zuzugreifen?
+  <details><summary>Lösung</summary>
+
+  Damit keine eingehenden Verbindungen aus der IT in die OT nötig sind. Die DMZ entkoppelt beide Seiten: Wird die IT kompromittiert, führt kein direkter Weg in die OT. Die OT repliziert in die DMZ, die IT liest nur dort.
+
+  </details>
 - [ ] Wozu dient eine Daten-Diode?
+  <details><summary>Lösung</summary>
+
+  Zur physisch erzwungenen Einweg-Übertragung, z. B. Monitoring- oder Historian-Daten aus einer hochkritischen Zone nach außen – ein Rückkanal ist hardwareseitig ausgeschlossen.
+
+  </details>

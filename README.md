@@ -9,7 +9,8 @@ Self-paced Lernpfad und interaktiver Fragentrainer für **OT-/ICS-Security nach 
 | Bereich | Pfad | Beschreibung |
 |---|---|---|
 | Lernplan | [`katalog/00-lernplan.md`](katalog/00-lernplan.md) | 6-Wochen-Plan, Fortschritts-Checkliste, Prüfungstipps |
-| Lernmodule | [`katalog/`](katalog/) | 10 Module mit Lernzielen, Kernwissen, Merksätzen, Praxisbezug und Selbstcheck |
+| Lernpfade | [`katalog/lernpfade.md`](katalog/lernpfade.md) | Zertifikats-Roadmap Fundamentals → Risk Assessment → Design, Denkwechsel Netzwerk → OT Security |
+| Lernmodule | [`katalog/`](katalog/) | 13 Module mit Lernzielen, Kernwissen, Merksätzen, Praxisbezug und Selbstcheck |
 | Trainer | [`trainer/index.html`](trainer/index.html) | Browser-App: Übungsmodus, Prüfungssimulation mit Timer, Karteikasten (Spaced Repetition), Statistik |
 | Validierung | [`tools/validate.mjs`](tools/validate.mjs) | Prüft den Fragenpool auf Konsistenz |
 
@@ -30,10 +31,17 @@ Fortschritt wird lokal im Browser (localStorage) gespeichert und lässt sich als
 
 ### Modi
 
-- **Üben** – Fragen nach Modul/Schwierigkeit filtern, sofortiges Feedback mit Erklärung und Normverweis.
-- **Prüfungssimulation** – zufällige Auswahl über alle Module, Countdown, Auswertung erst am Ende, Bestehensgrenze 70 % (anpassbar).
-- **Karteikasten** – Leitner-System mit 5 Fächern: falsch beantwortete Fragen kommen häufiger dran.
-- **Statistik** – Trefferquote pro Modul, Schwachstellen auf einen Blick.
+Oben **„Ich lerne für: …“** wählen: 1 Foundation (Fundamentals Specialist), 2 Risk Assessment, 3 Design, 4 Maintenance, 5 Expert, plus Ergänzung Bahn EN 50159 – alle Tabs zeigen dann nur Inhalte dieser Stufe.
+
+- **Start (Stufen-Dashboard)** – Fortschritt je Thema, Lernkartei, verlinktes Lernmaterial.
+  - **Täglich lernen**: fällige Wiederholungen plus begrenzt neue Fragen. Falsche Antworten kommen in derselben Runde wieder. **Gemeistert** ist eine Frage erst, wenn sie an **zwei verschiedenen Tagen** richtig beantwortet wurde.
+  - **Simulation**: enthält den **Prüfungspool** – Fragen, die nur in Simulationen vorkommen und Transfer auf unbekannte Fälle messen.
+  - **PRÜFUNGSREIF** = alle Lernfragen gemeistert + letzte zwei Simulationen an verschiedenen Tagen mit ≥ 90 % gesamt und ≥ 80 % im Prüfungspool.
+- **Üben** – freies Üben nach Thema und Schwierigkeit.
+- **Prüfung** – Simulation mit einstellbarer Länge, Zeit und Bestehensgrenze.
+- **Statistik** – Fortschritt je Thema, Schwachstellen, Simulationen.
+
+Nach jeder Antwort gibt es **Feedback zu jeder gewählten und jeder übersehenen Option** – warum sie richtig oder falsch ist.
 
 ## Module
 
@@ -49,13 +57,22 @@ Fortschritt wird lokal im Browser (localStorage) gespeichert und lässt sich als
 | 08 | Anforderungen an Dienstleister | 2-4 |
 | 09 | Sichere Produktentwicklung & Komponentenanforderungen | 4-1, 4-2 |
 | 10 | Zertifizierung, Regulatorik & Netzwerk-Praxis | ISASecure, NIS2, CRA |
+| 11 | Risk Assessment Vertiefung | 3-2 Praxis |
+| 12 | Design Vertiefung | 3-3 / 4-2 Praxis, CFAT/CSAT, Firewall-Planung |
+| 13 | Betrieb & Wartung | IDS, SIEM, Incident Response, MoC, Backup, Audit |
+| 15 | [Ergänzung Bahn: EN 50159](katalog/15-en50159.md) | sichere Kommunikation, Kategorien, Bedrohungen, Abwehr |
+| 14 | [Musterlösung Übungsfall](katalog/14-musterloesung-talsperre.md) | Zonen, SL-T, CRS, Conduit-Spezifikationen |
 
 ## Fragen beitragen
 
-Fragen liegen in [`trainer/fragen.js`](trainer/fragen.js). Nach Änderungen:
+Fragen liegen pro Modul in [`trainer/fragen/`](trainer/fragen/) (Format in [`trainer/fragen.js`](trainer/fragen.js): jede Option mit eigenem Feedback). Nach Änderungen:
 
 ```bash
 node tools/validate.mjs
 ```
+
+Die Zuordnung Stufe → Thema → Fragen liegt in [`trainer/syllabus.js`](trainer/syllabus.js). Der Validator prüft, dass jedes Thema mindestens 6 Fragen hat, jede Frage mindestens eine Falschantwort enthält und jede Frage einer Stufe zugeordnet ist.
+
+> **Ehrlicher Hinweis:** 100 % im Trainer bedeuten, dass du alle öffentlich bekannten Themen jeder Stufe beherrschst. Eine Garantie für die echte Prüfung ist das nicht – deren Fragen sind vertraulich, und Syllabus/Format können sich ändern.
 
 Bitte nur **selbst formulierte** Fragen – siehe [RECHTLICHES.md](RECHTLICHES.md).

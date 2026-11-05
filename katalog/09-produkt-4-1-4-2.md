@@ -48,5 +48,20 @@ Hersteller entwickelt nach **4-1** (Prozess, ML) → Produkt erfüllt **4-2** (T
 
 ## Selbstcheck
 - [ ] Welche 4-1-Practice behandelt den Umgang mit gemeldeten Schwachstellen?
+  <details><summary>Lösung</summary>
+
+  DM – Management of security-related issues (Annahme, Bewertung, Behebung, Kommunikation; typischerweise über ein PSIRT).
+
+  </details>
 - [ ] Welcher 4-2-Typ ist ein Managed Switch?
+  <details><summary>Lösung</summary>
+
+  NDR – Network Device Requirements.
+
+  </details>
 - [ ] Bezieht sich 4-2 auf SL oder ML?
+  <details><summary>Lösung</summary>
+
+  Auf SL (genauer: SL-C, die technische Fähigkeit der Komponente). ML gehört zu 4-1.
+
+  </details>

@@ -72,5 +72,20 @@ Der Asset Owner legt die Matrix und das tolerierbare Risiko fest – die Norm gi
 
 ## Selbstcheck
 - [ ] Was passiert, wenn in ZCR 4 das Anfangsrisiko tolerierbar ist?
+  <details><summary>Lösung</summary>
+
+  Die detaillierte Risikobeurteilung (ZCR 5) kann entfallen; es geht direkt mit der Dokumentation der Anforderungen (ZCR 6) und der Freigabe (ZCR 7) weiter.
+
+  </details>
 - [ ] Wer gibt die Ergebnisse frei?
+  <details><summary>Lösung</summary>
+
+  Der Asset Owner (ZCR 7) – er trägt das Risiko.
+
+  </details>
 - [ ] Nenne vier Assettypen, die in eigene Zonen gehören.
+  <details><summary>Lösung</summary>
+
+  Safety-Systeme (SIS) · drahtlose Geräte/Netze · temporär verbundene Geräte (Laptops, USB) · über externe/nicht vertrauenswürdige Netze angebundene Geräte. Außerdem: IT/Business-Assets getrennt von IACS-Assets.
+
+  </details>

@@ -34,6 +34,11 @@ Integrator ──(Automation Solution nach 3-2/3-3, gemäß 2-4)──► Asset 
 Asset Owner ──(Betrieb nach 2-1, Wartung via Maintenance-SP nach 2-4)──► IACS im Betrieb
 ```
 
+### Profile (1-5) und Protection Scheme (2-2)
+- **Profile (62443-1-5)**: Branchen- oder anwendungsspezifische Auswahl/Anpassung von 62443-Anforderungen (z. B. für eine bestimmte Branche oder Geräteklasse), damit nicht jedes Projekt die Reihe neu interpretiert.
+- **Security Protection Scheme/Rating (62443-2-2)**: Bewertet den Schutz eines IACS **im Betrieb** – kombiniert technische Fähigkeiten (SL) und gelebte Prozesse (ML) zu einer Gesamtaussage.
+- **Konformitätsmetriken (62443-1-3)**: Ansätze, um die Erfüllung von System-Anforderungen messbar zu machen.
+
 ### Dokumenttypen
 - **IS** – International Standard, normative Anforderungen („shall“).
 - **TS** – Technical Specification, noch nicht voll konsensreif.
@@ -49,5 +54,20 @@ ISA99-Komitee (USA) entwickelt als ISA-62443, IEC TC65 WG10 übernimmt als IEC 6
 
 ## Selbstcheck
 - [ ] Ein Hersteller will seinen Entwicklungsprozess zertifizieren lassen. Welcher Teil?
+  <details><summary>Lösung</summary>
+
+  62443-4-1 (Secure Product Development Lifecycle), z. B. über ISASecure SDLA.
+
+  </details>
 - [ ] Ein Betreiber schreibt die Wartung aus. Auf welchen Teil verweist er?
+  <details><summary>Lösung</summary>
+
+  62443-2-4 – Anforderungen an Service Provider (hier Maintenance), z. B. SP.07 Fernzugriff, SP.09 Konten, SP.11 Patch, SP.12 Backup.
+
+  </details>
 - [ ] Ist 2-3 normativ?
+  <details><summary>Lösung</summary>
+
+  Nein. 62443-2-3 ist ein Technical Report (TR) und damit informativ.
+
+  </details>

@@ -45,4 +45,14 @@ Für Fernwartung (SP.07) vertraglich fordern: Zugang nur über Jump-Host in der 
 
 ## Selbstcheck
 - [ ] Wer entscheidet, welche 2-4-Anforderungen gelten?
+  <details><summary>Lösung</summary>
+
+  Der Asset Owner – durch Auswahl und Festlegung im Vertrag bzw. in der Ausschreibung.
+
+  </details>
 - [ ] Welcher Bereich deckt Benutzerkonten ab?
+  <details><summary>Lösung</summary>
+
+  SP.09 Account Management.
+
+  </details>

@@ -58,5 +58,20 @@ SL wird **pro FR** angegeben: `SL-T(Zone) = {IAC, UC, SI, DC, RDF, TRE, RA}`, z.
 
 ## Selbstcheck
 - [ ] Welches FR deckt Netzwerksegmentierung ab?
+  <details><summary>Lösung</summary>
+
+  FR 5 – Restricted Data Flow (SR 5.1 Segmentierung, SR 5.2 Zonengrenzen).
+
+  </details>
 - [ ] Eine SPS hat SL-C 2 für FR 1, die Zone fordert SL-T 3. Was tun?
+  <details><summary>Lösung</summary>
+
+  Gap analysieren (welche SR/REs fehlen?) und dann kompensieren – z. B. Zugriff nur über einen vorgelagerten Engineering-Host/Jump-Host mit MFA – oder ein Produkt mit passendem SL-C wählen. Kompensation dokumentieren und vom Asset Owner bestätigen lassen. Das SL-T wird NICHT abgesenkt.
+
+  </details>
 - [ ] Ab welchem SL setzt die Norm IACS-spezifisches Wissen beim Angreifer voraus?
+  <details><summary>Lösung</summary>
+
+  Ab SL 3 (SL 3 und SL 4; SL 4 zusätzlich mit umfangreichen Ressourcen und hoher Motivation).
+
+  </details>

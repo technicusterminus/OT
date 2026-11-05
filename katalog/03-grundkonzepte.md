@@ -52,5 +52,20 @@ Wenn eine Komponente eine Anforderung nicht selbst erfüllt, kann eine andere Ma
 
 ## Selbstcheck
 - [ ] Ist ein VLAN automatisch eine Zone?
+  <details><summary>Lösung</summary>
+
+  Nein. Eine Zone ist eine Gruppe von Assets mit gemeinsamen Security-Anforderungen. Ein VLAN kann eine Zone technisch umsetzen, aber erst die Analyse der Anforderungen macht daraus eine Zone – und ein VLAN ohne Filterung ist noch keine Zonengrenze.
+
+  </details>
 - [ ] Nenne ein Beispiel, wie eine Security-Funktion eine essenzielle Funktion stören könnte.
+  <details><summary>Lösung</summary>
+
+  Beispiele: Kontosperre nach Fehlversuchen sperrt den Operator im Notfall aus · Virenscanner verschiebt HMI-Dateien in Quarantäne · IPS blockiert durch Fehlalarm legitimen Steuerverkehr · Fail-Close einer Firewall trennt bei Defekt die Leitstelle.
+
+  </details>
 - [ ] Was unterscheidet Residual- und Tolerable-Risk?
+  <details><summary>Lösung</summary>
+
+  Residual Risk ist das Restrisiko nach Umsetzung der Gegenmaßnahmen. Tolerable Risk ist die vom Asset Owner festgelegte Grenze, die das Restrisiko nicht überschreiten darf (Ziel: Residual ≤ Tolerable).
+
+  </details>
