@@ -90,6 +90,26 @@ KPIs (Beispiele): Anteil Assets im Inventar, Patch-Rückstand nach Kritikalität
 
 ## Selbstcheck
 - [ ] Nenne drei OT-spezifische SIEM-Use-Cases.
+  <details><summary>Lösung</summary>
+
+  Programm-Download oder Moduswechsel einer SPS außerhalb des Wartungsfensters · neues Gerät/neue MAC im Zellennetz · Fernwartungssitzung ohne Ticket · Engineering-Protokoll aus unerwarteter Quelle · Konfigurationsänderung an Zonen-Firewalls.
+
+  </details>
 - [ ] Warum braucht ein OT-IR-Plan vorab definierte Isolationspunkte?
+  <details><summary>Lösung</summary>
+
+  Weil eine spontane Netztrennung im Ernstfall den Prozess gefährden kann. Vorab muss geklärt sein, welche Verbindung getrennt werden darf, wer das entscheidet und wie sich die Anlage dann verhält (Island Mode) – sonst wird zu spät oder falsch gehandelt.
+
+  </details>
 - [ ] Was gehört alles ins Backup einer Fertigungszelle?
+  <details><summary>Lösung</summary>
+
+  SPS-Programme und -Parameter · HMI-Projekte · Server-/Workstation-Images · Netzwerk- und Firewall-Konfigurationen · Lizenzen · Zertifikate und Schlüssel · Dokumentation (Netzplan, Inventar). Mindestens eine Kopie offline; Restore regelmäßig testen.
+
+  </details>
 - [ ] Wie prüfst du im Audit, ob der Netzplan stimmt?
+  <details><summary>Lösung</summary>
+
+  Abgleich mit realen Netzwerkdaten: passiver Mitschnitt bzw. OT-IDS-Daten, Switch-Tabellen (MAC/ARP), Firewall-Logs und -Regeln. Abweichungen (unbekannte Geräte, undokumentierte Flüsse) sind Befunde.
+
+  </details>

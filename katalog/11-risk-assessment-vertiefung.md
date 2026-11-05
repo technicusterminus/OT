@@ -97,5 +97,20 @@ Beispiel „Talsperre Süd“:
 
 ## Selbstcheck
 - [ ] Warum darf ein mechanisches Sicherheitsventil die Konsequenz mindern, ein programmierbares SIS aber nicht ohne Weiteres?
+  <details><summary>Lösung</summary>
+
+  Das Ventil kann per Cyberangriff nicht manipuliert werden, seine Wirkung ist also auch im Angriffsfall gesichert. Ein programmierbares, vernetztes SIS kann selbst Angriffsziel sein (vgl. TRITON) – es darf nur angerechnet werden, wenn seine eigene Absicherung bewertet ist.
+
+  </details>
 - [ ] Warum hat die SIS-Zone im Beispiel FR 4 = 1?
+  <details><summary>Lösung</summary>
+
+  Das relevante Risiko ist Manipulation oder Ausfall der Sicherheitsfunktion, nicht das Mitlesen der Daten. Vertraulichkeit hat dort geringen Schutzbedarf, Integrität (FR 3) und Datenfluss (FR 5) dagegen hohen.
+
+  </details>
 - [ ] Welche Anlässe lösen eine erneute Risikobeurteilung aus?
+  <details><summary>Lösung</summary>
+
+  Neue externe Verbindungen (Cloud, Fernwartung) · größere Anlagenänderungen/-erweiterungen · geänderte Bedrohungslage (z. B. CERT-Warnungen) · weggefallene Annahmen der CRS · Sicherheitsvorfälle · regelmäßige Überprüfung.
+
+  </details>

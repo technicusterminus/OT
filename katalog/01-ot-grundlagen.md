@@ -78,5 +78,20 @@ Grundregel: **Keine direkte Kommunikation von Level 4 nach Level 2 oder tiefer**
 
 ## Selbstcheck
 - [ ] Warum ist ein aktiver Portscan in der OT riskant?
+  <details><summary>Lösung</summary>
+
+  Viele Embedded-Geräte haben schwache IP-Stacks und reagieren auf unerwartete Pakete mit Absturz, Neustart oder Fehlzustand – im laufenden Prozess heißt das Produktionsausfall oder sogar Safety-Risiko. Deshalb passiv (SPAN/TAP) erfassen und aktive Scans nur mit Freigabe im Wartungsfenster bzw. am Testsystem.
+
+  </details>
 - [ ] Ordne Historian, Jump-Host, HMI, SPS, ERP ins Purdue-Modell ein.
+  <details><summary>Lösung</summary>
+
+  SPS → Level 1 · HMI → Level 2 · Historian → Level 3 (Spiegel ggf. in der DMZ 3.5) · Jump-Host → DMZ (Level 3.5) · ERP → Level 4.
+
+  </details>
 - [ ] Welches Schutzziel hat in der OT typischerweise oberste Priorität – und warum?
+  <details><summary>Lösung</summary>
+
+  Verfügbarkeit (zusammen mit Safety/HSE): Ein Ausfall oder eine Störung des Prozesses kann Menschen, Umwelt und Anlage gefährden und verursacht hohe Kosten. Integrität folgt dicht dahinter, Vertraulichkeit ist meist nachrangig.
+
+  </details>

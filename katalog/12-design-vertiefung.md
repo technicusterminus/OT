@@ -102,5 +102,20 @@ Jede Kompensation wird **dokumentiert und in der Risikobewertung bestätigt**.
 
 ## Selbstcheck
 - [ ] Erstelle die Conduit-Spezifikation für C1 Fernwartung.
+  <details><summary>Lösung</summary>
+
+  Siehe ausführlich in der [Musterlösung](14-musterloesung-talsperre.md#conduit-c1-fernwartung). Kurz: verbindet Internet/Hersteller ↔ DMZ (Jump-Host) ↔ Zielzone · SL-T ≈ {3,3,3,3,3,3,2} · Zugang nur über Remote-Access-Gateway und Jump-Host · personalisierte Konten mit MFA · Freischaltung pro Einsatz durch den Betreiber, zeitlich begrenzt · nur definierte Zielsysteme/Protokolle · Session-Recording, Logs ans SIEM · kein direkter Tunnel in Level 1/2.
+
+  </details>
 - [ ] Warum keine Kontosperre an der Operator-HMI – und was stattdessen?
+  <details><summary>Lösung</summary>
+
+  Bedienen und Beobachten ist eine essenzielle Funktion – ein ausgesperrter Operator kann im Notfall nicht eingreifen. Stattdessen: zunehmende Verzögerung nach Fehlversuchen, Alarm ans SIEM, physische Zugangskontrolle zur Leitwarte, ggf. Not-Bedienung.
+
+  </details>
 - [ ] Was gehört in eine SR-Traceability-Matrix?
+  <details><summary>Lösung</summary>
+
+  Je geforderter SR/RE: das SL-T, aus dem sie folgt · die Umsetzung (Produktfähigkeit, Konfiguration oder kompensierende Maßnahme) · der Nachweis (CFAT/CSAT-Testfall, Dokument) · der Status bzw. offene Gaps mit Risikoentscheidung.
+
+  </details>

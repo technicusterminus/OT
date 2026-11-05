@@ -31,16 +31,17 @@ Fortschritt wird lokal im Browser (localStorage) gespeichert und lässt sich als
 
 ### Modi
 
-- **Start (Stufen-Dashboard)** – je Zertifikatsstufe (Fundamentals, Risk Assessment, Design, Maintenance, Expert) alle Themen aus den öffentlichen ISA-Kursbeschreibungen mit Fortschritt pro Thema:
-  - **Meistermodus**: fragt jede offene Frage, bis sie **zweimal in Folge richtig** beantwortet ist – falsche kommen nach wenigen Fragen wieder. Endet erst bei 100 %.
-  - **Stufen-Simulation**: ausgewogen über alle Themen der Stufe, Zeitlimit, Ziel ≥ 90 %.
-  - **PRÜFUNGSREIF** = 100 % gemeistert + letzte zwei Simulationen ≥ 90 %.
+Oben **„Ich lerne für: …“** wählen (Fundamentals, Risk Assessment, Design, Maintenance, Expert) – alle Tabs zeigen dann nur Inhalte dieser Stufe.
 
-- **Stufenwahl** – oben „Ich lerne für: …“ wählen (Fundamentals, Risk Assessment, Design, Maintenance, Expert). **Alle Tabs** zeigen dann nur Inhalte dieser Stufe: Dashboard, Üben nach Themen, Prüfung, Karteikasten, Statistik. Die Stufe bleibt gespeichert.
-- **Üben** – Fragen der Stufe nach Thema/Schwierigkeit filtern, sofortiges Feedback mit Erklärung und Normverweis.
-- **Prüfungssimulation** – ausgewogene Auswahl über alle Themen der Stufe, Countdown, Auswertung erst am Ende, Bestehensgrenze 70 % (anpassbar).
-- **Karteikasten** – Leitner-System mit 5 Fächern: falsch beantwortete Fragen kommen häufiger dran.
-- **Statistik** – Trefferquote pro Modul, Schwachstellen auf einen Blick.
+- **Start (Stufen-Dashboard)** – Fortschritt je Thema, Lernkartei, verlinktes Lernmaterial.
+  - **Täglich lernen**: fällige Wiederholungen plus begrenzt neue Fragen. Falsche Antworten kommen in derselben Runde wieder. **Gemeistert** ist eine Frage erst, wenn sie an **zwei verschiedenen Tagen** richtig beantwortet wurde.
+  - **Simulation**: enthält den **Prüfungspool** – Fragen, die nur in Simulationen vorkommen und Transfer auf unbekannte Fälle messen.
+  - **PRÜFUNGSREIF** = alle Lernfragen gemeistert + letzte zwei Simulationen an verschiedenen Tagen mit ≥ 90 % gesamt und ≥ 80 % im Prüfungspool.
+- **Üben** – freies Üben nach Thema und Schwierigkeit.
+- **Prüfung** – Simulation mit einstellbarer Länge, Zeit und Bestehensgrenze.
+- **Statistik** – Fortschritt je Thema, Schwachstellen, Simulationen.
+
+Nach jeder Antwort gibt es **Feedback zu jeder gewählten und jeder übersehenen Option** – warum sie richtig oder falsch ist.
 
 ## Module
 
@@ -59,10 +60,11 @@ Fortschritt wird lokal im Browser (localStorage) gespeichert und lässt sich als
 | 11 | Risk Assessment Vertiefung | 3-2 Praxis |
 | 12 | Design Vertiefung | 3-3 / 4-2 Praxis, CFAT/CSAT, Firewall-Planung |
 | 13 | Betrieb & Wartung | IDS, SIEM, Incident Response, MoC, Backup, Audit |
+| 14 | [Musterlösung Übungsfall](katalog/14-musterloesung-talsperre.md) | Zonen, SL-T, CRS, Conduit-Spezifikationen |
 
 ## Fragen beitragen
 
-Fragen liegen in [`trainer/fragen.js`](trainer/fragen.js). Nach Änderungen:
+Fragen liegen pro Modul in [`trainer/fragen/`](trainer/fragen/) (Format in [`trainer/fragen.js`](trainer/fragen.js): jede Option mit eigenem Feedback). Nach Änderungen:
 
 ```bash
 node tools/validate.mjs

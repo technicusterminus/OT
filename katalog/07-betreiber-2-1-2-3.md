@@ -48,5 +48,20 @@ Wichtig: **SL** bewertet die **Technik** (Wie stark?), **ML** bewertet den **Pro
 
 ## Selbstcheck
 - [ ] Ist 2-3 ein IS oder ein TR?
+  <details><summary>Lösung</summary>
+
+  Ein TR (Technical Report).
+
+  </details>
 - [ ] Ein Patch ist nicht freigegeben, die Lücke ist kritisch. Was tun?
+  <details><summary>Lösung</summary>
+
+  Risiko im Kontext bewerten (Erreichbarkeit, Zone, Kritikalität) und bis zur Freigabe kompensieren: Segmentierung verschärfen, Dienst deaktivieren, Application Whitelisting, verstärktes Monitoring. Nach Freigabe testen und im Wartungsfenster einspielen.
+
+  </details>
 - [ ] Was beschreibt ML 3?
+  <details><summary>Lösung</summary>
+
+  ML 3 „Defined (Practiced)“: Der Prozess ist dokumentiert, organisationsweit etabliert und es gibt Nachweise, dass er tatsächlich gelebt wird.
+
+  </details>

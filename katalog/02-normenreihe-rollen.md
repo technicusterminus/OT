@@ -54,5 +54,20 @@ ISA99-Komitee (USA) entwickelt als ISA-62443, IEC TC65 WG10 übernimmt als IEC 6
 
 ## Selbstcheck
 - [ ] Ein Hersteller will seinen Entwicklungsprozess zertifizieren lassen. Welcher Teil?
+  <details><summary>Lösung</summary>
+
+  62443-4-1 (Secure Product Development Lifecycle), z. B. über ISASecure SDLA.
+
+  </details>
 - [ ] Ein Betreiber schreibt die Wartung aus. Auf welchen Teil verweist er?
+  <details><summary>Lösung</summary>
+
+  62443-2-4 – Anforderungen an Service Provider (hier Maintenance), z. B. SP.07 Fernzugriff, SP.09 Konten, SP.11 Patch, SP.12 Backup.
+
+  </details>
 - [ ] Ist 2-3 normativ?
+  <details><summary>Lösung</summary>
+
+  Nein. 62443-2-3 ist ein Technical Report (TR) und damit informativ.
+
+  </details>

@@ -77,5 +77,20 @@ logging host 10.10.3.20
 
 ## Selbstcheck
 - [ ] Zu welchem FR gehört Backup?
+  <details><summary>Lösung</summary>
+
+  FR 7 – Resource Availability (SR 7.3 Backup, SR 7.4 Wiederherstellung).
+
+  </details>
 - [ ] Welche SR adressiert Fernzugriff aus nicht vertrauenswürdigen Netzen?
+  <details><summary>Lösung</summary>
+
+  SR 1.13 – Access via untrusted networks.
+
+  </details>
 - [ ] Wie verhält sich eine Zonengrenze mit „Fail-Close“ bei Ausfall?
+  <details><summary>Lösung</summary>
+
+  Sie blockiert den Verkehr über die Grenze. So entsteht bei einem Defekt keine ungeschützte Verbindung – allerdings muss das gegen die Verfügbarkeit abgewogen werden.
+
+  </details>
